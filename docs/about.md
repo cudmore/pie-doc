@@ -39,17 +39,17 @@ The PiE server only exists because of the massive amount of hard-work, creativit
  
 ### [Javascript](https://www.javascript.com/) (front-end)
   - [Angular](https://angularjs.org/) - Superheroic Javascript framework
-  - [JQuery](https://jquery.com/)
+  - [JQuery](https://jquery.com/) - Fast, small, and feature-rich JavaScript library
   - [D3](https://d3js.org/) - Data driven documents
   - [Leaflet](http://leafletjs.com/) - Interactive maps
-  - [Plotly](https://plot.ly/) - Modern visualization for the data era
+  - [Plotly](https://plot.ly/) - Modern analytics for the data era
   - [Bootstrap](https://getbootstrap.com/) - Worlds most popular HTML/CSS/JS Toolkit
   
 ### Containers
   - [Docker][docker] - Software containers are the future
 
 ### Programming microcontrollers
- - [platformio][platformio] - An open source ecosystem for IoT development
+ - [PlatformIO][platformio] - An open source ecosystem for IoT development
  
 ### Documentation
   - [Jekyll](https://jekyllrb.com/) - Static site generator (Main [Map Manager](http://mapmanager.net/) documentation)
