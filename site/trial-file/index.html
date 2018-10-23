@@ -1,0 +1,862 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Raspberry Pi Controlled Experiment (PiE)">
+      
+      
+      
+        <meta name="author" content="Robert H Cudmore">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../img/icons/video-camera-blue.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>Trial File - PiE Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+      
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../#trial-file-format" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="PiE Docs" class="md-header-nav__button md-logo">
+          
+            <img src="../img/icons/video-camera-blue.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                PiE Docs
+              </span>
+              <span class="md-header-nav__topic">
+                Trial File
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/cudmore/pie" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      PiE Repository
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="PiE Docs" class="md-nav__button md-logo">
+      
+        <img src="../img/icons/video-camera-blue.png" width="48" height="48">
+      
+    </a>
+    PiE Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/cudmore/pie" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      PiE Repository
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../install/" title="Install" class="md-nav__link">
+      Install
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../web-interface/" title="Web Interface" class="md-nav__link">
+      Web Interface
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../commander/" title="Commander" class="md-nav__link">
+      Commander
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../parts/" title="Parts" class="md-nav__link">
+      Parts
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../wiring-behavior-box/" title="Wiring - Behavior Box" class="md-nav__link">
+      Wiring - Behavior Box
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../wiring-scope/" title="Wiring - Scope" class="md-nav__link">
+      Wiring - Scope
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../wiring-treadmill/" title="Wiring - Treadmill" class="md-nav__link">
+      Wiring - Treadmill
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../troubleshooting/" title="Troubleshooting" class="md-nav__link">
+      Troubleshooting
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" checked>
+    
+    <label class="md-nav__link" for="nav-10">
+      Extras
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Extras
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Trial File
+      </label>
+    
+    <a href="./" title="Trial File" class="md-nav__link md-nav__link--active">
+      Trial File
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#trial-file-format" title="Trial File Format" class="md-nav__link">
+    Trial File Format
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trial-file-header" title="Trial File Header" class="md-nav__link">
+    Trial File Header
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trial-file-events" title="Trial File Events" class="md-nav__link">
+    Trial File Events
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../gpio-timing/" title="GPIO Timing" class="md-nav__link">
+      GPIO Timing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../file-server/" title="File Server" class="md-nav__link">
+      File Server
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mount-usb-drive/" title="Mount USB Drive" class="md-nav__link">
+      Mount USB Drive
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../release-notes/" title="Release Notes" class="md-nav__link">
+      Release Notes
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#trial-file-format" title="Trial File Format" class="md-nav__link">
+    Trial File Format
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trial-file-header" title="Trial File Header" class="md-nav__link">
+    Trial File Header
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trial-file-events" title="Trial File Events" class="md-nav__link">
+    Trial File Events
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Trial File</h1>
+                
+                <p>Trial files are text files to log events that occur during a video recording. Trial file names are automatically generated with the date, time, and trial number as 'yyyymmdd_hhmmss_t[trial].txt' where [trial] is the trial number.</p>
+<p>Events are accumulated during each video recording, including 'record' and 'arm', and saved at the end of each recording into a trial file.</p>
+<h2 id="trial-file-format">Trial File Format</h2>
+<p>All trial files begin with a one line header, followed by one line of column names and then any number of events (one line per event). Trial files are comma delimited except for the one line header. Here is an example trial file with 8 events:</p>
+<pre><code>date=20180902;time=19:26:49;startTimeSeconds=1535930809.9245791;hostname=&quot;pi15&quot;;id=&quot;&quot;;condition=&quot;&quot;;trialNum=4;numRepeats=1;repeatDuration=301;numRepeatsRecorded=1;repeatInfinity=&quot;False&quot;;scopeFilename&quot;&quot;;video_fps=30;video_resolution=&quot;640,480&quot;;
+date,time,linuxSeconds,secondsSinceStart,event,value,str,tick
+20180902,19:26:49,1535930809.9245791,0.0,startTrial,4,,None
+20180902,19:26:49,1535930809.95922,0.03464078903198242,newRepeat,1,,None
+20180902,19:26:49,1535930809.9660773,0.04149818420410156,beforefilepath,1,/home/pi/video/20180902/20180902_192649_t4_r1_before.h264,None
+20180902,19:26:49,1535930809.9661162,0.04153704643249512,afterfilepath,1,/home/pi/video/20180902/20180902_192649_t4_r1_after.h264,None
+20180902,19:26:50,1535930810.1416507,0.217071533203125,frame,1,1654442841,710240.945
+20180902,19:26:50,1535930810.1694624,0.24488329887390137,frame,2,1654476158,710270.944
+20180902,19:26:51,1535930811.1701634,1.24558424949646,triggerIn,False,,711270.812
+20180902,19:26:51,1535930811.252085,1.3275058269500732,stopTrial,4,,None
+</code></pre>
+
+<p>Note that the date and start time of a trial (yyyymmdd and hh:mm:ss) appears in (i) the file name, (ii) the header, and (iii) the first 'startTrial' event.</p>
+<h3 id="trial-file-header">Trial File Header</h3>
+<p>The trial file header is a single line with a semi-colon delimited list of token=value pairs. Tokens with a string or boolean type use double quotes ("") around their value. If there is no value for a string token, the double quotes are always included.</p>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Format</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>date</td>
+<td>yyyymmdd</td>
+<td></td>
+</tr>
+<tr>
+<td>time</td>
+<td>hh:mm:ss</td>
+<td></td>
+</tr>
+<tr>
+<td>startTimeSeconds</td>
+<td>float</td>
+<td></td>
+</tr>
+<tr>
+<td>hostname</td>
+<td>string</td>
+<td>The hostname of the Raspberry Pi. Useful to keep track of multiple machines.</td>
+</tr>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>The id that is entered in the web, can be empty (e.g. "").interface.</td>
+</tr>
+<tr>
+<td>condition</td>
+<td>string</td>
+<td>The condition that is entered in the web interface, can be empty (e.g. "").</td>
+</tr>
+<tr>
+<td>trialNum</td>
+<td>integer</td>
+<td></td>
+</tr>
+<tr>
+<td>numRepeats</td>
+<td>integer</td>
+<td></td>
+</tr>
+<tr>
+<td>repeatDuration</td>
+<td>float</td>
+<td></td>
+</tr>
+<tr>
+<td>numRepeatsRecorded</td>
+<td>integer</td>
+<td>The number of repeats actually recorded. Can be different from numRepeats if the user stops the video recording before it is finished.</td>
+</tr>
+<tr>
+<td>repeatInfinity</td>
+<td>boolean</td>
+<td></td>
+</tr>
+<tr>
+<td>scopeFilename</td>
+<td>string</td>
+<td></td>
+</tr>
+<tr>
+<td>video_fps</td>
+<td>integer</td>
+<td>The frames-per-second of the recorded video, set in the web interface.</td>
+</tr>
+<tr>
+<td>video_resolution</td>
+<td>string</td>
+<td>The width and height of the video recording (in pixels). For example "640,480" or "1024,768"</td>
+</tr>
+</tbody>
+</table>
+<h3 id="trial-file-events">Trial File Events</h3>
+<p>All events begin with date, time, linuxSeconds, and secondsSinceStart tokens.</p>
+<table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>date</td>
+<td>yyyymmdd</td>
+</tr>
+<tr>
+<td>time</td>
+<td>hh:mm:ss</td>
+</tr>
+<tr>
+<td>linuxSeconds</td>
+<td>A long float representing the time since the linux epoch, this value comes from the Python time package time.time().</td>
+</tr>
+<tr>
+<td>secondsSinceStart</td>
+<td>A long float representing the number of seconds (with fraciton) soince the 'start trigger was received'.</td>
+</tr>
+</tbody>
+</table>
+<p>All events end with a 'tick' token. Tick tokens are unsigned float that represents the micro-seconds since the startTrial event. These are only used if the pigpio daemon has been activated. If the pigpiod is not active, all ticks will be logged as 'None' (without the single-quotes). Using pigpio gives better precision for GPIO events compared to the standard Python time.time() function. Keep in mind, although events are more precise, they can still be missed!</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Class</th>
+<th>value</th>
+<th>str</th>
+<th>tick</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>startTrial</td>
+<td>bTrial</td>
+<td>The trial number</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>stopTrial</td>
+<td>bTrial</td>
+<td>The trial number</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>newRepeat</td>
+<td>bTrial</td>
+<td>The repeat (epoch) number</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>whiteLED</td>
+<td>bTrial</td>
+<td>1 for on, 0 for off</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>irLED</td>
+<td>bTrial</td>
+<td>1 for on, 0 for off</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>temperature</td>
+<td>bTrial</td>
+<td>The temperature in celcius (assumes using a DHT sensor)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>humidity</td>
+<td>bTrial</td>
+<td>The % relative humidity (assumes using a DHT sensor)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>triggerIn</td>
+<td>bPins</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>frame</td>
+<td>bPins</td>
+<td>The frame number</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>generic</td>
+<td>bPins</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>user2</td>
+<td>bPins</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>beforefilepath</td>
+<td>bCamera</td>
+<td>n/a</td>
+<td>Full path to pre trigger video file.</td>
+<td></td>
+</tr>
+<tr>
+<td>afterfilepath</td>
+<td>bCamera</td>
+<td>n/a</td>
+<td>Full path to main video file. The whole point of the PiE server.</td>
+<td></td>
+</tr>
+<tr>
+<td>startArmedRecording</td>
+<td>bCamera</td>
+<td>Time armed recording was started. The code to retrieve this time is immediately after the code to start the camera. As such, it is a more precide time-stamp for the actual time the video was started.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>stopArmedRecording</td>
+<td>bCamera</td>
+<td>Same idea but at the stop of armed recording, see startArmedRecording.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>startVideoRecord</td>
+<td>bCamera</td>
+<td>See startArmedRecording.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>stopVideoRecord</td>
+<td>bCamera</td>
+<td>Same idea but at the stop of recording, see startArmedRecording</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.583bbe55.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="../javascripts/extra.js"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>

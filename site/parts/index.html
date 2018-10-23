@@ -1,0 +1,1178 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Raspberry Pi Controlled Experiment (PiE)">
+      
+      
+      
+        <meta name="author" content="Robert H Cudmore">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../img/icons/video-camera-blue.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>Parts - PiE Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+      
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../#raspberry-pi" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="PiE Docs" class="md-header-nav__button md-logo">
+          
+            <img src="../img/icons/video-camera-blue.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                PiE Docs
+              </span>
+              <span class="md-header-nav__topic">
+                Parts
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/cudmore/pie" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      PiE Repository
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="PiE Docs" class="md-nav__button md-logo">
+      
+        <img src="../img/icons/video-camera-blue.png" width="48" height="48">
+      
+    </a>
+    PiE Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/cudmore/pie" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      PiE Repository
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../install/" title="Install" class="md-nav__link">
+      Install
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../web-interface/" title="Web Interface" class="md-nav__link">
+      Web Interface
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../commander/" title="Commander" class="md-nav__link">
+      Commander
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Parts
+      </label>
+    
+    <a href="./" title="Parts" class="md-nav__link md-nav__link--active">
+      Parts
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#raspberry-pi" title="Raspberry Pi" class="md-nav__link">
+    Raspberry Pi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raspberry-pi-camera" title="Raspberry Pi Camera" class="md-nav__link">
+    Raspberry Pi Camera
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-channel-relay" title="Two channel relay" class="md-nav__link">
+    Two channel relay
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leds" title="LEDs" class="md-nav__link">
+    LEDs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-shifter" title="Level shifter" class="md-nav__link">
+    Level shifter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teensy-microcontroller" title="Teensy microcontroller" class="md-nav__link">
+    Teensy microcontroller
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stepper-motor-and-driver" title="Stepper motor and  driver" class="md-nav__link">
+    Stepper motor and  driver
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parts-list" title="Parts List" class="md-nav__link">
+    Parts List
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-video-recording" title="For video recording" class="md-nav__link">
+    For video recording
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-video-recording-on-a-scope-with-triggering-and-frame-clock" title="For video recording on a scope with triggering and frame clock" class="md-nav__link">
+    For video recording on a scope with triggering and frame clock
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#miscellaneous" title="Miscellaneous" class="md-nav__link">
+    Miscellaneous
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-controlling-a-motorized-treadmill-with-a-microcontroller" title="For controlling a motorized treadmill with a microcontroller" class="md-nav__link">
+    For controlling a motorized treadmill with a microcontroller
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-a-treadmill" title="Building a treadmill" class="md-nav__link">
+    Building a treadmill
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../wiring-behavior-box/" title="Wiring - Behavior Box" class="md-nav__link">
+      Wiring - Behavior Box
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../wiring-scope/" title="Wiring - Scope" class="md-nav__link">
+      Wiring - Scope
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../wiring-treadmill/" title="Wiring - Treadmill" class="md-nav__link">
+      Wiring - Treadmill
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../troubleshooting/" title="Troubleshooting" class="md-nav__link">
+      Troubleshooting
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Extras
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Extras
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../trial-file/" title="Trial File" class="md-nav__link">
+      Trial File
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../gpio-timing/" title="GPIO Timing" class="md-nav__link">
+      GPIO Timing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../file-server/" title="File Server" class="md-nav__link">
+      File Server
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mount-usb-drive/" title="Mount USB Drive" class="md-nav__link">
+      Mount USB Drive
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../release-notes/" title="Release Notes" class="md-nav__link">
+      Release Notes
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#raspberry-pi" title="Raspberry Pi" class="md-nav__link">
+    Raspberry Pi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raspberry-pi-camera" title="Raspberry Pi Camera" class="md-nav__link">
+    Raspberry Pi Camera
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-channel-relay" title="Two channel relay" class="md-nav__link">
+    Two channel relay
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leds" title="LEDs" class="md-nav__link">
+    LEDs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#level-shifter" title="Level shifter" class="md-nav__link">
+    Level shifter
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#teensy-microcontroller" title="Teensy microcontroller" class="md-nav__link">
+    Teensy microcontroller
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stepper-motor-and-driver" title="Stepper motor and  driver" class="md-nav__link">
+    Stepper motor and  driver
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parts-list" title="Parts List" class="md-nav__link">
+    Parts List
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#for-video-recording" title="For video recording" class="md-nav__link">
+    For video recording
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-video-recording-on-a-scope-with-triggering-and-frame-clock" title="For video recording on a scope with triggering and frame clock" class="md-nav__link">
+    For video recording on a scope with triggering and frame clock
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#miscellaneous" title="Miscellaneous" class="md-nav__link">
+    Miscellaneous
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-controlling-a-motorized-treadmill-with-a-microcontroller" title="For controlling a motorized treadmill with a microcontroller" class="md-nav__link">
+    For controlling a motorized treadmill with a microcontroller
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-a-treadmill" title="Building a treadmill" class="md-nav__link">
+    Building a treadmill
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Parts</h1>
+                
+                <p><a href="#parts-list">Jump to the actual parts list</a></p>
+<h3 id="raspberry-pi">Raspberry Pi</h3>
+<p>The <a href="https://www.raspberrypi.org/">Raspberry Pi</a> is a complete computer system in an almost credit card size. It has ethernet, USB, general-purpose-input-output pins (GPIO), a dedicated camera port, and runs a version of Debian Linux called <a href="https://www.raspberrypi.org/downloads/raspbian/">Rasbian</a>. You can pick up the current model, a <a href="https://www.raspberrypi.org/products/">Raspberry Pi 3 Model B+</a>.</p>
+<h3 id="raspberry-pi-camera">Raspberry Pi Camera</h3>
+<p>The Raspberry Pi has a dedicated camera port for the Raspberry Pi Camera. This is an 8 megapixel camera capable of frame rates as high as 90 frames-per-second and comes in two flavors, the <a href="https://www.raspberrypi.org/products/pi-noir-camera-v2/">Pi NOIR Camera</a> which can capture images/video using infrared (IR) lights and the '<a href="https://www.raspberrypi.org/products/camera-module-v2/">normal</a>' camera which can capture images/video using visible (white) light. We generally use the <a href="https://www.raspberrypi.org/products/pi-noir-camera-v2/">Pi NOIR</a> version to record video in behavior boxes during both the daytime (white LEDs) and night-time (IR LEDs) as well as on the scope to record video during two-photon imaging in the dark using IR LEDs.</p>
+<h3 id="two-channel-relay">Two channel relay</h3>
+<p>A <a href="https://en.wikipedia.org/wiki/Relay">relay</a> is a switch allowing you to turn higher voltage devices (usually LEDs connected to 12V power) on and off with 3V GPIO pins. We are using a <a href="https://www.amazon.com/SainSmart-101-70-100-2-Channel-Relay-Module/dp/B0057OC6D8">sainsmart 2-channel relay</a>.</p>
+<h3 id="leds">LEDs</h3>
+<p>If you end up with lots of LEDs, you could try an <a href="https://www.amazon.com/LightingWill-Non-waterproof-Multitouch-Application-IR850NM3528X300N/dp/B01DM9AT9C">IR LED strip</a> and/or a <a href="https://www.sparkfun.com/products/12621">white LED strip</a>.</p>
+<h3 id="level-shifter">Level shifter</h3>
+<p>If you need to connect the Raspberry Pi directly to 5V TTL lab equipment you <strong>need</strong> a <a href="https://en.wikipedia.org/wiki/Level_shifter">level shifter</a> to convert the 5V signal to 3V as the Raspberry Pi is only 3V tolerant. We normally use <a href="loginlevelconverter_adafruit">Adafruit</a> or <a href="loginlevelconverter_sparkfun">Sparkfun</a> level shifters.</p>
+<h3 id="teensy-microcontroller">Teensy microcontroller</h3>
+<p>We are using <a href="https://www.pjrc.com/teensy/">Teensy 3.2 or 3.5</a> microcontrollers. They are Arduino compatible but have a lot more features. These microcontrollers can be programmed from the command line using <a href="https://platformio.org/">platformio</a>, no need for the Arduino IDE. To use platformio, the Raspberry Pi needs a few simple system wide configurations, see the readme in <a href="platformio/">pie/platformio</a>. </p>
+<h3 id="stepper-motor-and-driver">Stepper motor and  driver</h3>
+<p>Use a <a href="https://www.sparkfun.com/products/9238">Bipolar stepper motor</a> with the <a href="https://www.sparkfun.com/products/12779">Easy Driver</a> motor driver.</p>
+<p><A id="parts-list"></a></p>
+<h2 id="parts-list">Parts List</h2>
+<p>Total cost for home-cage and/or on the scope video recording is around $200.</p>
+<h3 id="for-video-recording">For video recording</h3>
+<table>
+<thead>
+<tr>
+<th>Quatity</th>
+<th>Item</th>
+<th>Purpose</th>
+<th>Cost</th>
+<th>Vendor Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Raspberry Pi 3 Model B</td>
+<td>Computer system including computer, SD card, power, case, etc. etc.</td>
+<td>$75</td>
+<td><a href="https://www.amazon.com/CanaKit-Raspberry-Complete-Starter-Kit/dp/B01C6Q2GSY">amazon</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td>USB Flash Drive, 64GB</td>
+<td>To save recorded video</td>
+<td>$17</td>
+<td><a href="https://www.amazon.com/SanDisk-Ultra-Flash-Drive-SDCZ43-032G-GAM46/dp/B01BGTG3JA/ref=sr_1_22?s=pc&amp;ie=UTF8&amp;qid=1537973231&amp;sr=1-22&amp;keywords=usb%2Bkey&amp;th=1">amazon</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Pi NoIR Camera v2, 8MP</td>
+<td>IR video camera</td>
+<td>$30</td>
+<td><a href="https://www.adafruit.com/products/3100">adafruit</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td>(either this) Pi Camera Ribbon cable (2 meters)</td>
+<td>Flat ribbon cable to connect camera to computer (not optimal)</td>
+<td>$6</td>
+<td><a href="https://www.adafruit.com/products/2144">adafruit</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td>(or this 1/2) Pi Camera HDMI extension cable</td>
+<td>Allows camera to connect to computer using an HDMI cable</td>
+<td>$15</td>
+<td><a href="https://www.tindie.com/products/freto/pi-camera-hdmi-cable-extension/">tindie</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td>(and this 2/2) HDMI Cable of sufficient length</td>
+<td>Male/Male HDMI cable</td>
+<td>$7 - $15</td>
+<td><a href="https://www.amazon.com/AmazonBasics-High-Speed-HDMI-Cable-1-Pack/dp/B014I8SSD0/ref=sr_1_1?s=aht&amp;srs=10112675011&amp;ie=UTF8&amp;qid=1537972136&amp;sr=1-1">amazon</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td>SainSmart 2-Channel Relay Module</td>
+<td>Allow computer to switch LEDs on/off</td>
+<td>$9</td>
+<td><a href="https://www.amazon.com/SainSmart-101-70-100-2-Channel-Relay-Module/dp/B0057OC6D8/ref=sr_1_1?ie=UTF8&amp;qid=1509654257&amp;sr=8-1&amp;keywords=sainsmart+2-channel+relay+module&amp;dpID=51eyw8a9hKL&amp;preST=_SY300_QL70_&amp;dpSrc=srch">amazon</a></td>
+</tr>
+<tr>
+<td>&gt;4</td>
+<td>IR LEDs, 840-850 nm</td>
+<td>Illuminate in light proof imaging box. Original v1 camera did not work well with 960nm LEDs, need to check v2 camera.</td>
+<td>$1 each</td>
+<td><a href="https://www.sparkfun.com/products/9469">sparkfun</a></td>
+</tr>
+<tr>
+<td>&gt;1</td>
+<td>Universal 4-LED Miniature Wedge Base PCB</td>
+<td>To mount 4x LEDs + required resistor</td>
+<td>$1 each</td>
+<td><a href="https://www.superbrightleds.com/moreinfo/resistors/universal-4-led-miniature-wedge-base-pcb-mled-pcb/403/1387/">super-bright-led</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td>12V 2A LED Driver (does not come with wall plug)</td>
+<td>Power the IR LEDs</td>
+<td>$12</td>
+<td><a href="https://www.amazon.com/dp/B016FG9KWQ/ref=sspa_dk_detail_6?psc=1">amazon</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Ethernet cable    of sufficient length</td>
+<td>Connect the computer to the network</td>
+<td>$5 - $20</td>
+<td><a href="https://www.amazon.com/AmazonBasics-RJ45-Cat-6-Ethernet-Patch-Cable-25-Feet-7-6-Meters/dp/B00N2VIWPY/ref=sr_1_1_sspa?s=hi&amp;ie=UTF8&amp;qid=1537972791&amp;sr=1-1-spons&amp;keywords=ethernet&amp;psc=1">amazon</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="for-video-recording-on-a-scope-with-triggering-and-frame-clock">For video recording on a scope with triggering and frame clock</h3>
+<table>
+<thead>
+<tr>
+<th>Quatity</th>
+<th>Item</th>
+<th>Purpose</th>
+<th>Cost</th>
+<th>Vendor Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>4-channel Logic Level Converter (Bi-Directional)</td>
+<td>To connect 5V TTL lab equipment to 3V computer GPIO</td>
+<td>$4</td>
+<td><a href="https://www.sparkfun.com/products/12009">Sparkfun</a>, <a href="https://www.adafruit.com/products/757">Adafruit</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Tripod Swivel</td>
+<td>To mount the camera on an optical post and be able to angle it.</td>
+<td>$9</td>
+<td><a href="https://www.amazon.com/UTEBIT-Aluminum-Ballhead-Compatible-Recorder/dp/B06XKW7V14/ref=sr_1_17?s=electronics&amp;ie=UTF8&amp;qid=1537974250&amp;sr=1-17&amp;keywords=tripod+mount">amazon</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="miscellaneous">Miscellaneous</h3>
+<table>
+<thead>
+<tr>
+<th>Quatity</th>
+<th>Item</th>
+<th>Purpose</th>
+<th>Cost</th>
+<th>Vendor Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Breadboard and jumper cables</td>
+<td>A breadboard and a mixture of jumper cables: male/male, male/female, and female/female</td>
+<td>$11</td>
+<td><a href="https://www.amazon.com/Breadboard-Solderless-Prototype-Male-Female-Female-Female/dp/B073X7GZ1P/ref=sr_1_1_sspa?s=electronics&amp;ie=UTF8&amp;qid=1537975002&amp;sr=1-1-spons&amp;keywords=breadboard+400&amp;psc=1">amazon</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Wire</td>
+<td>To wire LEDs into light proof box</td>
+<td>$17</td>
+<td><a href="https://www.sparkfun.com/products/11375">sparkfun</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="for-controlling-a-motorized-treadmill-with-a-microcontroller">For controlling a motorized treadmill with a microcontroller</h3>
+<table>
+<thead>
+<tr>
+<th>Quatity</th>
+<th>Item</th>
+<th>Purpose</th>
+<th>Cost</th>
+<th>Vendor Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Teensy 3.5</td>
+<td>Arduino compatible microcontroller</td>
+<td>$25</td>
+<td><a href="https://www.pjrc.com/store/teensy35.html">teensy</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td>EasyDriver - Stepper Motor Driver</td>
+<td>Motor controller for stepper motor</td>
+<td>$15</td>
+<td><a href="https://www.sparkfun.com/products/12779">sparkfun</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Stepper Motor</td>
+<td>Share 12V 2A LED Driver for power</td>
+<td>$15</td>
+<td><a href="https://www.sparkfun.com/products/9238">sparkfun</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Rotary encoder</td>
+<td>Honeywell-600-128-CBL</td>
+<td>$51</td>
+<td><a href="https://www.digikey.com/product-detail/en/600128CBL/600CS-ND/53504">digi-key</a> or <a href="https://www.digikey.com/product-detail/en/honeywell-sensing-and-productivity-solutions/600128CN1/480-5967-ND/4381908">this</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="building-a-treadmill">Building a treadmill</h3>
+<p>These are <strong>Actobotics</strong> parts from <a href="http://servocity.com">ServoCity</a></p>
+<table>
+<thead>
+<tr>
+<th>Quatity</th>
+<th>Item</th>
+<th>Cost</th>
+<th>Part #</th>
+<th>Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td><a href="https://www.servocity.com/html/aluminum_channel.html"><strong>Aluminum channels</strong></a></td>
+<td></td>
+<td></td>
+<td><a href="https://www.servocity.com/html/aluminum_channel.html">link</a></td>
+</tr>
+<tr>
+<td>4</td>
+<td>1.50 inch Aluminum Channel</td>
+<td>2.99</td>
+<td>585440</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>6.00 inch Aluminum Channel</td>
+<td>5.99</td>
+<td>585446</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>9.00 inch Aluminum Channel</td>
+<td>7.99</td>
+<td>585450</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>15 inch Aluminum Channel</td>
+<td>11.99</td>
+<td>585458</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://www.servocity.com/html/shafting___tubing.html"><strong>Shafts and shaft couplers</strong></a></td>
+<td></td>
+<td></td>
+<td><a href="https://www.servocity.com/html/shafting___tubing.html">link</a></td>
+</tr>
+<tr>
+<td>2</td>
+<td>1/4 inch x12 inch Precision Shaft</td>
+<td>3.59</td>
+<td>634178</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>1/4 inch x4 inch Precision Shaft</td>
+<td>1.49</td>
+<td>634164</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>1/4 inch x6 inch Precision Shaft</td>
+<td>2.09</td>
+<td>634168</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>1/4 inch to 5mm Set Screw Shaft Coupler</td>
+<td>4.99</td>
+<td>625120</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>1/4 inch to 1/4 inch Set Screw Shaft Coupler</td>
+<td>4.99</td>
+<td>625104</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://www.servocity.com/html/hubs__couplers___adaptors.html"><strong>Couplers and adapters</strong></a></td>
+<td></td>
+<td></td>
+<td><a href="https://www.servocity.com/html/hubs__couplers___adaptors.html">link</a></td>
+</tr>
+<tr>
+<td>8</td>
+<td>1/4 inch Bore Clamping Hub (0.770 inch)</td>
+<td>7.99</td>
+<td>545588</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>1/4 inch Bore Set Screw Hub (0.770 inch)</td>
+<td>4.99</td>
+<td>545548</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Stepper Motor Mount (NEMA 17)</td>
+<td>7.49</td>
+<td>555152</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td>1/4-20 Round Screw Plate</td>
+<td>3.99</td>
+<td>545468</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Large Square Screw Plate</td>
+<td>2.69</td>
+<td>585430</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>90 Degree Quad Hub Mount C</td>
+<td>5.99</td>
+<td>545360</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>90 Degree Quad Hub Mount D</td>
+<td>5.99</td>
+<td>545324</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://www.servocity.com/html/bearings___bushings.html"><strong>Ball bearings</strong></a></td>
+<td></td>
+<td></td>
+<td><a href="https://www.servocity.com/html/bearings___bushings.html">link</a></td>
+</tr>
+<tr>
+<td>3</td>
+<td>.250 inch ID x .500 inch OD Flanged Ball Bearing (Stainless Steel) 2 pack</td>
+<td>1.99</td>
+<td>535198</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Dual Ball Bearing Hub A</td>
+<td>6.99</td>
+<td>545444</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>1/4 inch Shafting &amp; Tubing Spacers (12 pk)</td>
+<td>1.69</td>
+<td>633104</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://www.servocity.com/html/gears.html"><strong>Gears</strong></a></td>
+<td></td>
+<td></td>
+<td><a href="https://www.servocity.com/html/gears.html">link</a></td>
+</tr>
+<tr>
+<td>1</td>
+<td>16T, 0.250 inch Bore, 32P Bevel Gear</td>
+<td>5.99</td>
+<td>615442</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>32T, 0.250 inch Bore, 32P Bevel Gear</td>
+<td>7.99</td>
+<td>615444</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>16T, 5mm Bore, 32P Bevel Gear</td>
+<td>5.99</td>
+<td>615438</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>48 Tooth, 32 Pitch Hub Gear (3/16 inch Face)</td>
+<td>5.20</td>
+<td>RHA32-36-48</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><a href="https://www.servocity.com/html/fasteners___hardware1.html"><strong>Fasteners</strong></a></td>
+<td></td>
+<td></td>
+<td><a href="https://www.servocity.com/html/fasteners___hardware1.html">link</a></td>
+</tr>
+<tr>
+<td>24</td>
+<td>6-32x3/8 inch Pan Head Phillips Machine Screws (Zinc-Plated)</td>
+<td>0.06</td>
+<td>90272A146</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>1/2 inch 1/4-20 Flat Head Phillips Machine Screws</td>
+<td>0.38</td>
+<td>90273A537</td>
+<td></td>
+</tr>
+<tr>
+<td>1</td>
+<td>3/32 Hex Key</td>
+<td>1.39</td>
+<td>57185A11</td>
+<td></td>
+</tr>
+<tr>
+<td>6</td>
+<td>.250 in L x 6-32 Zinc-Plated Alloy Steel Socket Head Cap Screw (25 pk)</td>
+<td>1.69</td>
+<td>632106</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.583bbe55.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="../javascripts/extra.js"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
