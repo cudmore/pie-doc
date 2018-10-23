@@ -1,0 +1,855 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Raspberry Pi Controlled Experiment (PiE)">
+      
+      
+      
+        <meta name="author" content="Robert H Cudmore">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../img/icons/video-camera-blue.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>Wiring - Scope - PiE Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+      
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../#wiring-a-scope" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="PiE Docs" class="md-header-nav__button md-logo">
+          
+            <img src="../img/icons/video-camera-blue.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                PiE Docs
+              </span>
+              <span class="md-header-nav__topic">
+                Wiring - Scope
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/cudmore/pie" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      PiE Repository
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="PiE Docs" class="md-nav__button md-logo">
+      
+        <img src="../img/icons/video-camera-blue.png" width="48" height="48">
+      
+    </a>
+    PiE Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/cudmore/pie" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      PiE Repository
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../install/" title="Install" class="md-nav__link">
+      Install
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../web-interface/" title="Web Interface" class="md-nav__link">
+      Web Interface
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../commander/" title="Commander" class="md-nav__link">
+      Commander
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../parts/" title="Parts" class="md-nav__link">
+      Parts
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../wiring-behavior-box/" title="Wiring - Behavior Box" class="md-nav__link">
+      Wiring - Behavior Box
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Wiring - Scope
+      </label>
+    
+    <a href="./" title="Wiring - Scope" class="md-nav__link md-nav__link--active">
+      Wiring - Scope
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#raspberry-pi-3-pin-out" title="Raspberry Pi 3 pin out" class="md-nav__link">
+    Raspberry Pi 3 pin out
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-test-the-pie-server-frame-pin-with-a-tactile-button-switch" title="1) Test the PiE server 'frame' pin with a tactile-button-switch" class="md-nav__link">
+    1) Test the PiE server 'frame' pin with a tactile-button-switch
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-you-do-see-this" title="If you do see this" class="md-nav__link">
+    If you do see this
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-you-do-not-see-this" title="If you do not see this" class="md-nav__link">
+    If you do not see this
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-test-the-pie-server-trigger-in-pin-with-a-tactile-button-switch" title="2) Test the PiE server 'trigger-in' pin with a tactile-button-switch" class="md-nav__link">
+    2) Test the PiE server 'trigger-in' pin with a tactile-button-switch
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-you-do-see-this_1" title="If you do see this" class="md-nav__link">
+    If you do see this
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-you-do-not-see-this_1" title="If you do not see this" class="md-nav__link">
+    If you do not see this
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#once-your-trigger-in-pin-and-tactile-button-switch-are-working" title="Once your trigger-in pin and tactile-button-switch are working" class="md-nav__link">
+    Once your trigger-in pin and tactile-button-switch are working
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-connecting-triggerin-triggerout-and-frame-pins-to-a-scope" title="3) Connecting triggerIn, triggerOut, and frame pins to a scope." class="md-nav__link">
+    3) Connecting triggerIn, triggerOut, and frame pins to a scope.
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#raspberry-pi-as-the-master-scope-is-slave" title="Raspberry Pi as the master (Scope is slave)" class="md-nav__link">
+    Raspberry Pi as the master (Scope is slave)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raspberry-pi-as-the-slave-scope-is-master" title="Raspberry Pi as the slave (Scope is master)" class="md-nav__link">
+    Raspberry Pi as the slave (Scope is master)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" title="Troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wiring-diagram" title="Wiring diagram" class="md-nav__link">
+    Wiring diagram
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../wiring-treadmill/" title="Wiring - Treadmill" class="md-nav__link">
+      Wiring - Treadmill
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../troubleshooting/" title="Troubleshooting" class="md-nav__link">
+      Troubleshooting
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Extras
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Extras
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../trial-file/" title="Trial File" class="md-nav__link">
+      Trial File
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../gpio-timing/" title="GPIO Timing" class="md-nav__link">
+      GPIO Timing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../file-server/" title="File Server" class="md-nav__link">
+      File Server
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mount-usb-drive/" title="Mount USB Drive" class="md-nav__link">
+      Mount USB Drive
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../release-notes/" title="Release Notes" class="md-nav__link">
+      Release Notes
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#raspberry-pi-3-pin-out" title="Raspberry Pi 3 pin out" class="md-nav__link">
+    Raspberry Pi 3 pin out
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-test-the-pie-server-frame-pin-with-a-tactile-button-switch" title="1) Test the PiE server 'frame' pin with a tactile-button-switch" class="md-nav__link">
+    1) Test the PiE server 'frame' pin with a tactile-button-switch
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-you-do-see-this" title="If you do see this" class="md-nav__link">
+    If you do see this
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-you-do-not-see-this" title="If you do not see this" class="md-nav__link">
+    If you do not see this
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-test-the-pie-server-trigger-in-pin-with-a-tactile-button-switch" title="2) Test the PiE server 'trigger-in' pin with a tactile-button-switch" class="md-nav__link">
+    2) Test the PiE server 'trigger-in' pin with a tactile-button-switch
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-you-do-see-this_1" title="If you do see this" class="md-nav__link">
+    If you do see this
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#if-you-do-not-see-this_1" title="If you do not see this" class="md-nav__link">
+    If you do not see this
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#once-your-trigger-in-pin-and-tactile-button-switch-are-working" title="Once your trigger-in pin and tactile-button-switch are working" class="md-nav__link">
+    Once your trigger-in pin and tactile-button-switch are working
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-connecting-triggerin-triggerout-and-frame-pins-to-a-scope" title="3) Connecting triggerIn, triggerOut, and frame pins to a scope." class="md-nav__link">
+    3) Connecting triggerIn, triggerOut, and frame pins to a scope.
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#raspberry-pi-as-the-master-scope-is-slave" title="Raspberry Pi as the master (Scope is slave)" class="md-nav__link">
+    Raspberry Pi as the master (Scope is slave)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raspberry-pi-as-the-slave-scope-is-master" title="Raspberry Pi as the slave (Scope is master)" class="md-nav__link">
+    Raspberry Pi as the slave (Scope is master)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#troubleshooting" title="Troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wiring-diagram" title="Wiring diagram" class="md-nav__link">
+    Wiring diagram
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="wiring-a-scope">Wiring a scope</h1>
+<p>This is a tutorial for wiring tactile-push-buttons to trigger a <code>frame</code> and a <code>trigger-in</code> in a PiE server.</p>
+<p>This tutorial requires:</p>
+<ul>
+<li>A <a href="https://www.adafruit.com/product/64">breadboard</a>.</li>
+<li>Some <a href="https://www.adafruit.com/?q=jumper%20wires">jumper wires</a>.</li>
+<li>Two <a href="https://www.adafruit.com/product/367">tactile push buttons</a>.</li>
+<li>A functioning Raspberry Pi.</li>
+<li>A <a href="https://github.com/cudmore/pie">PiE server</a> to be installed.</li>
+</ul>
+<h3 id="raspberry-pi-3-pin-out">Raspberry Pi 3 pin out</h3>
+<p>Here is a schematic of the Raspberry Pi 2/3 pin outs. Red is 5V, orange is 3.3V, yellow are GPIO, black are Ground, and white should not be used.</p>
+<p><IMG SRC="../img/raspberry_pins.png"></p>
+<p>Important: The Raspberry Pi GPIO pins are <strong>not</strong> 5V tolerant. Never connect a 5V line to a Raspberry GPIO pin.</p>
+<h2 id="1-test-the-pie-server-frame-pin-with-a-tactile-button-switch">1) Test the PiE server 'frame' pin with a tactile-button-switch</h2>
+<p>Here, we will wire a tactile-button-switch to the the Raspberry Pi 3.3V line and the PiE <code>frame</code> pin (GPIO 18) to test that pushing the button registers a <code>frame</code> in the PiE server. This button will normally sit at <code>LOW</code> and take on a '3.3V ' level when pushed.</p>
+<ul>
+<li>
+<p>1) Wire the Raspberry Pi 3.3V pin to the '+' rail on a breadboard (red).</p>
+</li>
+<li>
+<p>2) Insert a <a href="https://www.adafruit.com/product/367">Tactile-button-switch</a> on the breadboard.</p>
+</li>
+<li>
+<p>3) Connect the <strong>top-left</strong> pin of the Tactile-button-switch to the '+' rail on the breadboard (red).</p>
+</li>
+<li>4) Connect the <strong>top-right</strong> pin of the Tactile-button-switch to the Raspberry Pi <code>GPIO 23</code>.</li>
+<li>5) The remaining <strong>bottom-left</strong> and <strong>bottom-right</strong> pins on the tactile-button-switch should <strong>not</strong> be connected to anything.</li>
+</ul>
+<p>Make sure the PiE server is running with <code>./pie run</code> so we can see the output in the terminal.</p>
+<pre><code>cd ~/pie
+./pie stop # stop any background PiE servers
+./pie run # run the PiE server on the command line
+</code></pre>
+
+<p>In the 'Pins' section, configure the triggerIn pin to Polarity 'rising' and Pull Up/Down to 'down'. Do the same for the 'frame' pin.</p>
+<p><IMG SRC="../img/tutorial/pins_example.png"></p>
+<p>Make sure 'Allow arming' is checked in the Configure section.</p>
+<p>Push the <code>frame</code> tactile-button-switch and you should see see something like this on the command line:</p>
+<pre><code>!!! received frame when not running
+</code></pre>
+
+<h3 id="if-you-do-see-this">If you do see this</h3>
+<p>Good. Your <code>frame</code> pin is working.</p>
+<h3 id="if-you-do-not-see-this">If you <strong>do not</strong> see this</h3>
+<p><strong>STOP</strong> your <code>frame</code> pin is <strong>not</strong> working. Please check your wiring and try again.</p>
+<h2 id="2-test-the-pie-server-trigger-in-pin-with-a-tactile-button-switch">2) Test the PiE server 'trigger-in' pin with a tactile-button-switch</h2>
+<p>Here, we will wire a tactile-button-switch to the Raspberry Pi 3.3V line and the PiE 'triggerIn' pin (GPIO 23) to test that pushing the button starts a 'trial' in the PiE server. This push-button will normally sit at <code>LOW</code> and take on a '3.3V' level when pushed.</p>
+<ul>
+<li>
+<p>1) Wire the Raspberry Pi 3.3V pin to the '+' rail on a breadboard (red).</p>
+</li>
+<li>
+<p>2) Insert a <a href="https://www.adafruit.com/product/367">Tactile-button-switch</a> on the breadboard.</p>
+</li>
+<li>
+<p>3) Connect the <strong>top-left</strong> pin of the Tactile-button-switch to the '+' rail on the breadboard (red).</p>
+</li>
+<li>4) Connect the <strong>top-right</strong> pin of the Tactile-button-switch to the Raspberry Pi <code>GPIO 24</code>.</li>
+<li>5) The remaining <strong>bottom-left</strong> and <strong>bottom-right</strong> pins on the tactile-button-switch should <strong>not</strong> be connected to anything.</li>
+</ul>
+<p>Make sure the PiE server is running with <code>./pie run</code> so we can see the output in the terminal.</p>
+<pre><code>cd ~/pie
+./pie stop # stop any background PiE servers
+./pie run # run the PiE server on the command line
+</code></pre>
+
+<p>Make sure 'Allow arming' is checked in the Configure section.</p>
+<p>Push the <code>trigger-in</code> tactile-button-switch and you should see something like this on the command line:</p>
+<pre><code>!!! received triggerIn_Callback() when camera is NOT armed
+</code></pre>
+
+<h3 id="if-you-do-see-this_1">If you do see this</h3>
+<p>Good. Your <code>trigger-in</code> pin is working.</p>
+<h3 id="if-you-do-not-see-this_1">If you <strong>do not</strong> see this</h3>
+<p><strong>STOP</strong> your <code>trigger-in</code> pin is <strong>not</strong> working. Please check your wiring and try again.</p>
+<h3 id="once-your-trigger-in-pin-and-tactile-button-switch-are-working">Once your trigger-in pin and tactile-button-switch are working</h3>
+<p>Go into the web interface and <code>arm</code> the recording with the arm checkbox.</p>
+<p>Push the <code>trigger-in</code> tactile-button-switch and video should start recording and you should see this in the command prompt:</p>
+<pre><code>[2018-07-09 08:48:26,556] {bTrial.py startTrial:702} DEBUG - startTrial startArmVideo=True
+[2018-07-09 08:48:26,559] {bTrial.py startTrial:721} INFO - triggerOut pin:15 value:True
+</code></pre>
+
+<p>Then, while the recording is still going, push the <code>frame</code> tactile-button-switch and you should see</p>
+<pre><code>[2018-07-09 08:49:08,884] {bTrial.py eventIn_Callback:614} DEBUG - eventIn_Callback() frame 1
+[2018-07-09 08:49:09,027] {bTrial.py eventIn_Callback:614} DEBUG - eventIn_Callback() frame 2
+[2018-07-09 08:49:09,312] {bTrial.py eventIn_Callback:614} DEBUG - eventIn_Callback() frame 3
+</code></pre>
+
+<p>Once you done this for awhile, click the disk icon in the top tool-bar and view your videos and trial .txt files. Your videos should be watermarked with frame numbers and the .txt file should log the frame times. You will see two video files per trial, a before and after video. The after video is started when a trial is started, the before video is a 'pre-trigger' video whose length is set with 'Pre Trigger Buffer (sec)'. </p>
+<h2 id="3-connecting-triggerin-triggerout-and-frame-pins-to-a-scope">3) Connecting triggerIn, triggerOut, and frame pins to a scope.</h2>
+<p>Following the same logic, we can connect the Raspberry Pi <code>triggerIn</code> to the 'Scope Trigger Out', the Raspberry <code>triggerOut</code> to the 'scope Trigger In', and the Raspberry Pi <code>frame</code> in pin to the 'Scope Frame Out'. Keep in mind that the definition of 'in' versus 'out' is with respect to the device you are talking about.</p>
+<p>Important: The Raspberry Pi GPIO pins are <strong>not</strong> 5V tolerant. Never connect a 5V line to a Raspberry GPIO pin. We use a level-shifter to convert high voltage 5V to 3V.</p>
+<p>If your scope sends a rising <code>high</code> pulse for 'trigger out' and 'frame out' you can follow steps #1 and #2 above. If your scope sends a falling <code>low</code> pulse for either of these, you need to configure the 'pins' section of the web interface as polarity <code>falling</code> and Pull Up/Down as <code>up</code>.</p>
+<h3 id="raspberry-pi-as-the-master-scope-is-slave">Raspberry Pi as the master (Scope is slave)</h3>
+<p>To have the PiE server trigger your scope (Raspberry Pi is master), use the Raspberry <code>triggerOut</code> pin. In the web interface, if the 'Default Setting' for the <code>triggerOut</code> pin is set to 'false' then the PiE server will hold this pin <code>LOW</code> and send a 'positive' <code>HIGH</code> pulse when you click 'Start Trial'. The opposite is also true, if the 'Default Setting' for the <code>triggerOut</code> pin is set to 'true', the PiE server will hold this pin <code>HIGH</code> and send a <code>LOW</code> pulse when you click 'Start Trial'. You need to figure out what signal your scope is expecting for a trigger, it is either <code>HIGH</code> or <code>LOW</code>.</p>
+<h3 id="raspberry-pi-as-the-slave-scope-is-master">Raspberry Pi as the slave (Scope is master)</h3>
+<p>To have your scope trigger the PiE server (Scope is master), use the Raspberry <code>triggerIn</code> pin. In the web interface you 'arm' the Raspberry to 'wait for trigger' using the 'arm' checkbox.</p>
+<h3 id="troubleshooting">Troubleshooting</h3>
+<p>If you run into trouble it is best to independently test each component of the system. In this case, you would use a volt-meter to test the signals coming off your scope are what you expect.</p>
+<h3 id="wiring-diagram">Wiring diagram</h3>
+<p><IMG SRC="../img/pie_scope.png"></p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.583bbe55.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="../javascripts/extra.js"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
