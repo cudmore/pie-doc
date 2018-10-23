@@ -1,5 +1,5 @@
-This is the documentation for the PiE server.
+This is the documentation for the [PiE](https://cudmore.github.io/pie) server.
 
-Read PiE documentation here [https://cudmore.github.io/pie-doc](https://cudmore.github.io/pie-doc).
+Read the PiE documentation here [https://cudmore.github.io/pie-doc](https://cudmore.github.io/pie-doc).
 
-Browse main PiE repository here[https://cudmore.github.io/pie](https://cudmore.github.io/pie-doc).
+Browse the main PiE repository here [https://cudmore.github.io/pie](https://cudmore.github.io/pie).
