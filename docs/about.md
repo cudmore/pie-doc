@@ -15,11 +15,11 @@ The PiE server only exists because of the massive amount of hard-work, creativit
    --- [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds)
 
 ### Raspberry Pi
- - [Raspberry Pi Foundation](https://www.raspberrypi.org/) for making the hardware
- - [Raspian](https://www.raspberrypi.org/downloads/raspbian/) for making the operating system
- - [Raspberry GPIO](https://www.raspberrypi.org/documentation/usage/gpio/)
- - [Pigpio](http://abyz.me.uk/rpi/pigpio/) 
- - [PiCamera](https://picamera.readthedocs.io)
+ - [Raspberry Pi Foundation](https://www.raspberrypi.org/) - Design, manufacture, and distribute the Raspberry Pi
+ - [Raspian](https://www.raspberrypi.org/downloads/raspbian/) - The operating system that runs on the Raspberry Pi
+ - [Raspberry GPIO](https://www.raspberrypi.org/documentation/usage/gpio/) - To control and interact with the real world
+ - [Pigpio](http://abyz.me.uk/rpi/pigpio/) - A more precise deamon based GPIO interface
+ - [PiCamera](https://picamera.readthedocs.io) - Python package to control the Raspberry Pi camera
 
 ### Server
   - [Debian](https://www.debian.org/) - Operating system
@@ -48,16 +48,23 @@ The PiE server only exists because of the massive amount of hard-work, creativit
 ### Containers
   - [Docker][docker] - Software containers are the future
 
+### Programming microcontrollers
+ - [platformio][platformio] - An open source ecosystem for IoT development
+ 
 ### Documentation
   - [Jekyll](https://jekyllrb.com/) - Static site generator (Main [Map Manager](http://mapmanager.net/) documentation)
   - [mkDocs](http://www.mkdocs.org/) - Static site generator (This Website) using the [Material][material] theme.
   - [Sphinx](http://www.sphinx-doc.org/en/master/) - To create documentation ([PyMapManager API Documentation](http://pymapmanager.readthedocs.io/en/latest/))
 
 ### Distribution
+  - [Git][git] - Fast version control
   - [Github](https://github.com/) - Software development platform for online storage/sharing/computation
   - [PyPi](https://pypi.org/project/pymapmanager/) - Python package index for online distribution
   - [Travis](https://travis-ci.org/) - Test and Deploy with Confidence
 
+### Online help
+ - [Stack Overflow][stackoverflow] - Where Developers Learn, Share, & Build
+ 
 [duckdns]: http://cudmore.duckdns.org
 [pymapmanager]: https://github.com/cudmore/PyMapManager
 [pymapmanager-data]: https://github.com/mapmanager/PyMapManager-Data
@@ -69,3 +76,6 @@ The PiE server only exists because of the massive amount of hard-work, creativit
 [homecage]: https://github.com/cudmore/homecage
 [trigger-camera2]: https://github.com/cudmore/triggercamera2
 [material]: https://squidfunk.github.io/mkdocs-material/
+[git]: https://git-scm.com/
+[platformio]: https://platformio.org/
+[stackoverflow]: https://stackoverflow.com/
