@@ -14,27 +14,51 @@ th, td {
 }
 </style>
 
-These are images of the behavior box at different development stages.
+The PiE server can be used in different configurations depending on your needs. This includes a behavior box, on the scope video recording, and on the scope video recording with a treadmill.
 
 ## Behavior Box
 
+These are images of the behavior box at different development stages.
+
 ### v0.0
 
-#### Overview
+<TABLE>
 
-<IMG SRC="../img/behavior-box/overview-v0.jpg" width="600">
+	<TR>
 
-#### Lights and camera
+	<TD>
+	Overview
+	<IMG SRC="../img/behavior-box/overview-v0.jpg" WIDTH=400 style="border:1px solid gray">
+	</TD>
 
-<IMG SRC="../img/behavior-box/camera-lights-v0.jpg" width="600">
+	<TD>
+	Lights and camera
+	<IMG SRC="../img/behavior-box/camera-lights-v0.jpg" WIDTH=400 style="border:1px solid gray">
+	</TD>
 
-#### Rats nest
+	</TR>
+	
+	<TR>
 
-<IMG SRC="../img/behavior-box/rats-nest-v0.jpg" width="400">
+	<TD>
+	Rats nest
+	<IMG SRC="../img/behavior-box/rats-nest-v0.jpg" WIDTH=400 style="border:1px solid gray">
+	</TD>
+	
+	<TD>
+	</TD>
+	
+	</TR>
+
+</TABLE>
 
 ### v1.0
 
 Coming soon...
+
+## On the scope video recording
+
+Coming soon ...
 
 ## Treadmill
 
@@ -71,7 +95,6 @@ Detailed view of circular treadmill including
 	<IMG SRC="../img/treadmill/top-view.jpg" WIDTH=400 style="border:1px solid gray">
 	</TD>
 </TR>
-
 </TABLE>
 
 ### Treadmill on the scope

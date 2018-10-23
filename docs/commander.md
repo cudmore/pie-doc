@@ -63,10 +63,10 @@ python commander.py
 
 <table>
 <tr><td>
-<IMG SRC="../img/video-wall-screenshot-1.png" width="450">
+<IMG SRC="../img/video-wall-screenshot-1.png" width="550">
 </td></tr>
 <tr><td>
-<IMG SRC="../img/video-wall-screenshot-2.png" width="450">
+<IMG SRC="../img/video-wall-screenshot-2.png" width="550">
 </td></tr>
 </table>
 

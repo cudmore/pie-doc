@@ -50,7 +50,7 @@ The PiE server only exists because of the massive amount of hard-work, creativit
 
 ### Documentation
   - [Jekyll](https://jekyllrb.com/) - Static site generator (Main [Map Manager](http://mapmanager.net/) documentation)
-  - [mkDocs](http://www.mkdocs.org/) - Static site generator (This Website)
+  - [mkDocs](http://www.mkdocs.org/) - Static site generator (This Website) using the [Material][material] theme.
   - [Sphinx](http://www.sphinx-doc.org/en/master/) - To create documentation ([PyMapManager API Documentation](http://pymapmanager.readthedocs.io/en/latest/))
 
 ### Distribution
@@ -68,3 +68,4 @@ The PiE server only exists because of the massive amount of hard-work, creativit
 [treadmill]: https://github.com/cudmore/treadmill
 [homecage]: https://github.com/cudmore/homecage
 [trigger-camera2]: https://github.com/cudmore/triggercamera2
+[material]: https://squidfunk.github.io/mkdocs-material/
