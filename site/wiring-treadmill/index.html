@@ -348,8 +348,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#upload-code-to-a-teensy" title="Upload code to a Teensy" class="md-nav__link">
-    Upload code to a Teensy
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attaching-a-teensy-to-the-raspberry-pi" title="Attaching a Teensy to the Raspberry Pi" class="md-nav__link">
+    Attaching a Teensy to the Raspberry Pi
   </a>
   
 </li>
@@ -379,6 +386,26 @@
           <li class="md-nav__item">
   <a href="#pin-table" title="Pin table" class="md-nav__link">
     Pin table
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serial-interface" title="Serial interface" class="md-nav__link">
+    Serial interface
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-serial-interface-on-the-command-line" title="Using the serial interface on the command line" class="md-nav__link">
+    Using the serial interface on the command line
   </a>
   
 </li>
@@ -528,8 +555,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#upload-code-to-a-teensy" title="Upload code to a Teensy" class="md-nav__link">
-    Upload code to a Teensy
+  <a href="#overview" title="Overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attaching-a-teensy-to-the-raspberry-pi" title="Attaching a Teensy to the Raspberry Pi" class="md-nav__link">
+    Attaching a Teensy to the Raspberry Pi
   </a>
   
 </li>
@@ -568,6 +602,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#serial-interface" title="Serial interface" class="md-nav__link">
+    Serial interface
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-the-serial-interface-on-the-command-line" title="Using the serial interface on the command line" class="md-nav__link">
+    Using the serial interface on the command line
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -586,18 +640,22 @@
                 
                 
                 <h1 id="wiring-a-treadmill">Wiring a treadmill</h1>
-<h2 id="upload-code-to-a-teensy">Upload code to a Teensy</h2>
-<p>Please refer to the <a href="https://github.com/cudmore/pie/tree/master/platformio">pie/platformio</a> readme. The Arduino/Teensy code is in <a href="https://github.com/cudmore/pie/blob/master/platformio/treadmill/src/treadmill2.cpp">pie/platformio/treadmill/src/treadmill2.cpp</a>.</p>
+<h2 id="overview">Overview</h2>
+<p>The treadmill <a href="https://www.sparkfun.com/products/9238">stepper motor</a> is controlled with a <a href="https://www.sparkfun.com/products/12779">motor controller</a> which is controlled by a <a href="https://www.pjrc.com/store/teensy35.html">Teensy</a>. The Teensy is attached to the Pi via USB and code is uploaded using the command line program <a href="https://platformio.org/">platformio</a>. Once the code is running on the Teensy, the PiE server (in pie/pie_app/bTrial.py) uses a serial connection to set treadmill motor parameters. The Teensy logs all events within a trial to memory. At the end of a trial, the PiE server (again in pie/pie_app/bTrial.py) downloads all the events and saves them to a file.</p>
+<p>The Teensy code is in <a href="https://github.com/cudmore/pie/blob/master/platformio/treadmill/src/treadmill2.cpp">pie/platformio/treadmill/src/treadmill2.cpp</a>. </p>
+<h2 id="attaching-a-teensy-to-the-raspberry-pi">Attaching a Teensy to the Raspberry Pi</h2>
+<p>Attach a Teensy microcontroller to the Pi using a USB cable. Code is uploaded using a command line program called <a href="https://platformio.org/">platformio</a>. For how to do this, please refer to the <a href="https://github.com/cudmore/pie/tree/master/platformio">pie/platformio</a> readme. </p>
 <h2 id="parts">Parts</h2>
 <p>See the main <a href="../parts/">parts</a> page, scroll down to the treadmill section.</p>
 <h2 id="wiring">Wiring</h2>
-<p>This is a full wiring diagram for microscope triggered video recording and using a Teensy with a motorized treadmill. To just wire a Raspberry Pi to a scope, please see the <a href="../wiring-scope/">scope wiring tutorial</a>. This wiring diagram is made with <a href="http://fritzing.org/home/">Fritzing</a>, download the <a href="../img/pie.fzz">pie.fzz</a> file.</p>
-<ul>
-<li>Wire the Teensy  to <code>Scope Trigger In</code>, <code>Scope Trigger Out</code>, and <code>Scope Frame out</code>.</li>
-<li>Wire the Teensy to the Raspberry Pi</li>
-<li>Wire the stepper motor to the motor controller.</li>
-<li>Wire the motor controller to the Raspberry Pi</li>
-</ul>
+<p>This is a full wiring diagram for microscope triggered video recording and using a Teensy and motor controller with a motorized treadmill. This wiring diagram is made with <a href="http://fritzing.org/home/">Fritzing</a>, download the original <a href="../img/pie.fzz">pie.fzz</a> file if you like.</p>
+<p>There are lots of connections here, they can be conceptualized as 4 different subsystems.</p>
+<ol>
+<li>Wiring the Teensy  to <code>Scope Trigger In</code>, <code>Scope Trigger Out</code>, and <code>Scope Frame out</code>.</li>
+<li>Wiring the Teensy to the Raspberry Pi</li>
+<li>Wiring the stepper motor to the motor controller.</li>
+<li>Wiring the motor controller to the Teensy</li>
+</ol>
 <p><IMG SRC="../img/pie_fritzing.png"></p>
 <h3 id="important">Important</h3>
 <ul>
@@ -609,752 +667,144 @@
 </li>
 </ul>
 <h3 id="pin-table">Pin table</h3>
-<p>This table shows all the pin connections for the full treadmill system (option #4). To wire a Raspberry Pi to a scope without a Teensy (option #3), make sure you connect the Raspberry Pi <code>triggerOut</code>, <code>frame</code>, and <code>triggerIn</code> pins to a level-shifter and then to the scope. See the <a href="../wiring-scope/">scope wiring tutorial</a> for details.</p>
-<p><a href="../img/pie_pins.pdf">Download pdf</a> of this table.</p>
+<p>Download <a href="../img/pie_pins.pdf">this</a> pdf for a table of all pin connections between the Raspberry, motor controller, and Teensy.</p>
+<h2 id="serial-interface">Serial interface</h2>
+<p>The treadmill2.cpp code sets up serial communication at 115200 baud.</p>
+<p>All serial commands are a single line and must end in a carriage return (ascii 13). If a serial command is not understood by the treadmill code, it will return 'treadmill did not handle serial: ...'.</p>
 <table>
 <thead>
 <tr>
-<th></th>
-<th></th>
-<th><strong>Scope</strong></th>
-<th><strong>Other Devices</strong></th>
-<th><strong>Raspberry</strong></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th><strong>Teensy</strong></th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-<th><strong>Motor Controller</strong></th>
-<th></th>
+<th>Command</th>
+<th>Actions</th>
+<th>Returns</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Category</strong></td>
-<td><strong>Ground</strong></td>
-<td><strong>Description</strong></td>
-<td></td>
-<td><strong>Description</strong></td>
-<td><strong>Config FIle</strong></td>
-<td><strong>Pin #</strong></td>
-<td><strong>Input</strong></td>
-<td><strong>Output</strong></td>
-<td><strong>Description</strong></td>
-<td><strong>Config FIle</strong></td>
-<td><strong>Pin #</strong></td>
-<td><strong>Input</strong></td>
-<td><strong>Output</strong></td>
-<td><strong>Pin</strong></td>
-<td></td>
+<td>h</td>
+<td>Help</td>
+<td>A list of commands</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>v</td>
+<td>Get version</td>
+<td>Version</td>
 </tr>
 <tr>
-<td>Raspberry Ground</td>
-<td>X</td>
-<td></td>
-<td></td>
-<td>Gnd</td>
-<td></td>
-<td>Gnd</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>p</td>
+<td>Get state</td>
+<td>The state of all parameters as name=value pairs</td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>d</td>
+<td>Dump Trial</td>
+<td>All events that occurred during the last trial, one line per event. Each event contains a comma separated list of (timestamp, event name, value).</td>
 </tr>
 <tr>
-<td>Scope Ground</td>
-<td>X</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>start</td>
+<td>Start Trial</td>
+<td>None</td>
 </tr>
 <tr>
-<td>Scope Trigger In</td>
-<td></td>
-<td>Trigger In (5V)</td>
-<td></td>
-<td>triggerOut</td>
-<td>hardware.eventOut[0].pin</td>
-<td>15</td>
-<td></td>
-<td>X</td>
-<td>startTrialPin</td>
-<td>treadmill.cpp</td>
-<td>3</td>
-<td>X</td>
-<td></td>
-<td></td>
-<td></td>
+<td>stop</td>
+<td>Stop Trial</td>
+<td>None</td>
 </tr>
 <tr>
-<td>Scope Trigger Out</td>
-<td></td>
-<td>Trigger Out (5V)</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>extTriggerInPin</td>
-<td>treadmill.cpp</td>
-<td>8</td>
-<td>X</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>triggerIn</td>
-<td>hardware.eventIn[0].pin</td>
-<td>24</td>
-<td>X</td>
-<td></td>
-<td>passThroughExtTriggerInPin</td>
-<td>treadmill.cpp</td>
-<td>9</td>
-<td></td>
-<td>X</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Scope Frame Out</td>
-<td></td>
-<td>Frame Out (5V)</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>framePin</td>
-<td>treadmill.cpp</td>
-<td>5</td>
-<td>X</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>frame</td>
-<td>hardware.eventIn[1].pin</td>
-<td>23</td>
-<td>X</td>
-<td></td>
-<td>passThroughFramePin</td>
-<td>treadmill.cpp</td>
-<td>6</td>
-<td></td>
-<td>X</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>LEDs</td>
-<td></td>
-<td></td>
-<td>LED 1 (+)</td>
-<td>whiteLED</td>
-<td>hardware.eventOut[1].pin</td>
-<td>19</td>
-<td></td>
-<td>X</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>X</td>
-<td></td>
-<td>LED 1 (-)</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td>LED 2 (+)</td>
-<td>irLED</td>
-<td>hardware.eventOut[2].pin</td>
-<td>18</td>
-<td></td>
-<td>X</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>X</td>
-<td></td>
-<td>LED 2 (-)</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>DHT Sensor</td>
-<td></td>
-<td></td>
-<td>data (yellow)</td>
-<td>dhtSensor</td>
-<td>hardware.dhtSensor.pin</td>
-<td>4</td>
-<td>X</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td>5V (red)</td>
-<td></td>
-<td></td>
-<td>5V</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>X</td>
-<td></td>
-<td>Gnd (black)</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Stepper Motor</td>
-<td>X</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>Gnd</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>motorStepPin</td>
-<td>treadmill.cpp</td>
-<td>17</td>
-<td></td>
-<td>X</td>
-<td>Step</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>motorDirPin</td>
-<td>treadmill.cpp</td>
-<td>16</td>
-<td></td>
-<td>X</td>
-<td>Dir</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>motorResetPin</td>
-<td>treadmill.cpp</td>
-<td>19</td>
-<td></td>
-<td>X</td>
-<td>RST</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>motorEnabledPin</td>
-<td>treadmill.cpp</td>
-<td>20</td>
-<td></td>
-<td>X</td>
-<td>Enable</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>5V</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>5V (+)</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>X</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>Gnd</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td>12V DV (+)</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>PWR In (M+)</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>X</td>
-<td></td>
-<td>12V DC (Gnd)</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>PWR In (Gnd)</td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>arduinoMotor</td>
-<td>hardware.eventIn[2].pin</td>
-<td>8</td>
-<td>X</td>
-<td></td>
-<td>motorOnPin</td>
-<td>treadmill.cpp</td>
-<td>11</td>
-<td></td>
-<td>X</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>arduinoNewEpoch</td>
-<td>hardware.eventIn[3].pin</td>
-<td>7</td>
-<td>X</td>
-<td></td>
-<td>newEpochPin</td>
-<td>treadmill.cpp</td>
-<td>12</td>
-<td></td>
-<td>X</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Rotary Encoder</td>
-<td></td>
-<td></td>
-<td>Encoder 1</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>encoderPinA</td>
-<td>treadmill.cpp</td>
-<td>15</td>
-<td>X</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td>Encoder 1</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>encoderPinB</td>
-<td>treadmill.cpp</td>
-<td>16</td>
-<td>X</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td>Encoder 1 (+5V)</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>5V</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>X</td>
-<td></td>
-<td>Encoder 1 (Gnd)</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>???</td>
-<td></td>
-<td>X</td>
-<td></td>
-<td>encoderOutPin</td>
-<td>treadmill.cpp</td>
-<td>10</td>
-<td></td>
-<td>X</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Emergency Stop Button</td>
-<td></td>
-<td></td>
-<td>Push button (+3V)</td>
-<td>???</td>
-<td>???</td>
-<td>???</td>
-<td>X</td>
-<td></td>
-<td>emergencyStopPin</td>
-<td>treadmill.cpp</td>
-<td>20</td>
-<td>X</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td>X</td>
-<td></td>
-<td>Push button (Gnd)</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
+<td>set,name,value</td>
+<td>Set a parameter (name) to a value (value). See table below.</td>
+<td>name=value</td>
 </tr>
 </tbody>
 </table>
+<p>The command to 'set' a parameter (name) to a value (value) takes the following parameter 'names'. If a 'set' command is not understood, 'SetValue() did not handle ...' is returned.</p>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>meaning</th>
+<th>possible values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>numEpoch</td>
+<td>Number of epochs</td>
+<td>Unsigned Integer</td>
+</tr>
+<tr>
+<td>epochDur</td>
+<td>Epoch duration (ms)</td>
+<td>Unsigned Integer</td>
+</tr>
+<tr>
+<td>preDur</td>
+<td>Pre duration (ms). Specifies a duration before all epochs.</td>
+<td>Unsigned Integer</td>
+</tr>
+<tr>
+<td>postDur</td>
+<td>Post duration (ms). Specifies a duation after all epochs.</td>
+<td>Unsigned Integer</td>
+</tr>
+<tr>
+<td>useMotor</td>
+<td>Use the motor during a trial</td>
+<td>String in ("motorOn", "")</td>
+</tr>
+<tr>
+<td>motorDel</td>
+<td>Delay before turning the motor in an epoch (ms)</td>
+<td>Unsigned Integer</td>
+</tr>
+<tr>
+<td>motorDur</td>
+<td>Duration to turn the motor in an epoch (ms)</td>
+<td>Unsigned Integer</td>
+</tr>
+<tr>
+<td>motorSpeed</td>
+<td>Speed to turn the motor(au)</td>
+<td>Unsigned Integer, 100...700 from slow to fast.</td>
+</tr>
+<tr>
+<td>arm</td>
+<td>Arm the treadmill to start a trial in response to changes in startTrialPin pin</td>
+<td>String in ("True", "False")</td>
+</tr>
+<tr>
+<td>duringPulse</td>
+<td>What to do with motor during motorDur</td>
+<td>String in ("Rotate", "Locked", "Free")</td>
+</tr>
+<tr>
+<td>betweenPulse</td>
+<td>What to do with motor outside of motor dur</td>
+<td>String in ("Locked", "Free")</td>
+</tr>
+</tbody>
+</table>
+<p>Some examples, </p>
+<ul>
+<li>To set the number of epochs to 5, use <code>set,numEpoch,5</code>.</li>
+<li>To arm the treadmill, use <code>set,arm,True</code></li>
+<li>To have the treadmill free to turn between pulses, use <code>set,betweenPulse,Free</code></li>
+</ul>
+<h3 id="using-the-serial-interface-on-the-command-line">Using the serial interface on the command line</h3>
+<p>A simple yet esoteric command line program called <code>screen</code> can be used to establish a serial connection with an Arduino/Teensy on the command line.</p>
+<p>Install <code>screen</code></p>
+<pre><code>sudo apt-get install screen
+</code></pre>
+<p>Use <code>screen</code> to connect to serial port. This assumes your Arduino/Teensy is at <code>/dev/ttyACM0</code>.</p>
+<pre><code>screen /dev/ttyACM0 115200
+</code></pre>
+<p>Enter some serial commands manually</p>
+<pre><code>h
+v
+set,numEpoch,5
+d
+</code></pre>
+<p>You might have to hit <code>return</code> to get it going. Quit screen with <code>ctrl+a</code> then type <code>:</code> then type <code>quit</code></p>
                 
                   
                 
