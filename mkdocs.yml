@@ -20,6 +20,7 @@ nav:
  - Images: images.md
  - Troubleshooting: troubleshooting.md
  - Extras:
+   - Rest Interface: rest-interface.md
    - Trial File: trial-file.md
    - GPIO Timing: gpio-timing.md
    - File Server: file-server.md
