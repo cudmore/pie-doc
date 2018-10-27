@@ -315,8 +315,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#raspberry-pi-camera" title="Raspberry Pi Camera" class="md-nav__link">
-    Raspberry Pi Camera
+  <a href="#raspberry-pi-camera" title="Raspberry Pi camera" class="md-nav__link">
+    Raspberry Pi camera
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analog-video-output" title="Analog video output" class="md-nav__link">
+    Analog video output
   </a>
   
 </li>
@@ -609,8 +616,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#raspberry-pi-camera" title="Raspberry Pi Camera" class="md-nav__link">
-    Raspberry Pi Camera
+  <a href="#raspberry-pi-camera" title="Raspberry Pi camera" class="md-nav__link">
+    Raspberry Pi camera
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analog-video-output" title="Analog video output" class="md-nav__link">
+    Analog video output
   </a>
   
 </li>
@@ -720,8 +734,11 @@
                 <p><a href="#parts-list">Jump to the actual parts list</a></p>
 <h3 id="raspberry-pi">Raspberry Pi</h3>
 <p>The <a href="https://www.raspberrypi.org/">Raspberry Pi</a> is a complete computer system in an almost credit card size. It has ethernet, USB, general-purpose-input-output pins (GPIO), a dedicated camera port, and runs a version of Debian Linux called <a href="https://www.raspberrypi.org/downloads/raspbian/">Rasbian</a>. You can pick up the current model, a <a href="https://www.raspberrypi.org/products/">Raspberry Pi 3 Model B+</a>.</p>
-<h3 id="raspberry-pi-camera">Raspberry Pi Camera</h3>
+<h3 id="raspberry-pi-camera">Raspberry Pi camera</h3>
 <p>The Raspberry Pi has a dedicated camera port for the Raspberry Pi Camera. This is an 8 megapixel camera capable of frame rates as high as 90 frames-per-second and comes in two flavors, the <a href="https://www.raspberrypi.org/products/pi-noir-camera-v2/">Pi NOIR Camera</a> which can capture images/video using infrared (IR) lights and the '<a href="https://www.raspberrypi.org/products/camera-module-v2/">normal</a>' camera which can capture images/video using visible (white) light. We generally use the <a href="https://www.raspberrypi.org/products/pi-noir-camera-v2/">Pi NOIR</a> version to record video in behavior boxes during both the daytime (white LEDs) and night-time (IR LEDs) as well as on the scope to record video during two-photon imaging in the dark using IR LEDs.</p>
+<h3 id="analog-video-output">Analog video output</h3>
+<p>The Raspberry Pi has a 3.5mm headphone jack that can be used to view an anlog video stream from the Pi camera. The headphone jack needs to have 4-poles (bands), <a href="https://www.amazon.com/Parts-Express-3-5mm-Plug-Cable/dp/B0007V6JCK/ref=sr_1_15?s=audio-video-accessories&amp;ie=UTF8&amp;qid=1540573388&amp;sr=1-15&amp;keywords=video+jack">something like this</a>. The analog video can be connected directly to any monitor that accepts and RCA video input. Alternatively, the analog video can be sent to another computer using an analog video to USB converter, <a href="https://www.amazon.com/gp/product/B00LVTUX7E/ref=oh_aui_detailpage_o01_s00?ie=UTF8&amp;psc=1">something like this</a>. These video to USB converters are for some reason a large gray market and you need to be careful when ordering (you might get junk that does not work). In general, these video/USB converters use the <a href="https://visser.io/2015/06/easycap-drivers-for-windows-8-1/">easycap driver</a>.</p>
+<p>The PiE server will output a live video feed when 'arm' is checked. This video feed does not interfere with simultaneous video recording to a file.</p>
 <h3 id="two-channel-relay">Two channel relay</h3>
 <p>A <a href="https://en.wikipedia.org/wiki/Relay">relay</a> is a switch allowing you to turn higher voltage devices (usually LEDs connected to 12V power) on and off with 3V GPIO pins. We are using a <a href="https://www.amazon.com/SainSmart-101-70-100-2-Channel-Relay-Module/dp/B0057OC6D8">sainsmart 2-channel relay</a>.</p>
 <h3 id="leds">LEDs</h3>

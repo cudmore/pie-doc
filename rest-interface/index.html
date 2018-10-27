@@ -850,7 +850,10 @@ pprint(r.json()['trial']['runtime']['lastResponse'])
 <p><a href="http://processing.org">Processing</a> is a healthy alternative to Matlab and/or Python as it allows many of the same functionality without the overhead of a complicated, large, and proprietary installation.</p>
 <p>The Processing code below will fetch the status of the PiE server, toggle both the white and IR LEDs and then set new values on the PiE server.</p>
 <pre><code>// This code assumes that http.request library is installed
+// To install, select menu 'Sketch - Import Library... - Add Library...' and search for 'http requests'
 import http.requests.GetRequest;
+
+  // search and replace 192.168.1.4 with the IP address of a PiE server
 
   // grab the PiE server 'status' using endpoint /status
   JSONObject status = loadJSONObject(&quot;http://192.168.1.4:5010/status&quot;);
