@@ -33,13 +33,49 @@ If you run into trouble with the commander, run it on the command line to see th
 
 ### Editing IP addresses
 
-In the config section, turn on 'edit ip' checkbox. Enter a valid IP and hit enter. If the IP is for a running PiE server (no port number needed), the red (bad connection) will be replaced with the current status of the specified PiE server.
+In the config section, turn on 'edit ip' checkbox. Enter a valid IP and hit enter. If the IP is for a running PiE server (no port number needed), the red (bad connection) will be replaced with the current status of the specified PiE server. See 'Server Swarm' below.
 
 ### Warnings and errors
 
 When a PiE server is connected, the corresponding row in 'Server Swarm' will be filled in and active. When there is a connection error, the first column will appear red and all other controls will be inactive.
 
 When the drive space remaining goes below 5 GB, the 'File' column will be displayed in red. Currently, there is no interface to set this trip-point, 5 GB is  **hard-coded** in the commander index.html. Feel free to change it yourself.
+
+
+### Server swarm
+
+Here, the commander is controlling 8 PiE servers. Server 3 (hc3) is recording, server 7 has a connection error, and server 8 (hc8) is streaming. Click image to enlarge.
+
+<a href="../img/commander/commander-server-swarm.png">
+    <img src="../img/commander/commander-server-swarm.png" class="img-fluid">
+</a>
+
+### Swarm status
+
+The swarm status is a clearinghouse of information for each PiE server. This includes buttons to restart the PiE server and reboot the raspberry Pi. Click image to enlarge.
+
+<a href="../img/commander/commander-swarm-status.png">
+	<IMG SRC="../img/commander/commander-swarm-status.png">
+</a>
+
+### Video wall
+
+<table>
+<tr>
+	<td>
+	<a href="../img/commander/video-wall-screenshot-1.png">
+		<IMG SRC="../img/commander/video-wall-screenshot-1.png" width="550">
+	</a>
+	</td>
+</tr>
+<tr>
+	<td>
+	<a href="../img/commander/video-wall-screenshot-2.png">
+		<IMG SRC="../img/commander/video-wall-screenshot-2.png" width="550">
+	</a>
+	</td>
+</tr>
+</table>
 
 ## Troubleshooting
 
@@ -58,15 +94,4 @@ source commander_env/bin/activate
 python commander.py
 ```
 
-
-## Example screen shot of the commander controlling 8 PiE servers.
-
-<table>
-<tr><td>
-<IMG SRC="../img/video-wall-screenshot-1.png" width="550">
-</td></tr>
-<tr><td>
-<IMG SRC="../img/video-wall-screenshot-2.png" width="550">
-</td></tr>
-</table>
 

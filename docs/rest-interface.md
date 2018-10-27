@@ -132,7 +132,10 @@ The Processing code below will fetch the status of the PiE server, toggle both t
 
 ```
 // This code assumes that http.request library is installed
+// To install, select menu 'Sketch - Import Library... - Add Library...' and search for 'http requests'
 import http.requests.GetRequest;
+
+  // search and replace 192.168.1.4 with the IP address of a PiE server
 
   // grab the PiE server 'status' using endpoint /status
   JSONObject status = loadJSONObject("http://192.168.1.4:5010/status");

@@ -4,9 +4,15 @@
 
 The [Raspberry Pi][raspberry-pi] is a complete computer system in an almost credit card size. It has ethernet, USB, general-purpose-input-output pins (GPIO), a dedicated camera port, and runs a version of Debian Linux called [Rasbian][raspbian]. You can pick up the current model, a [Raspberry Pi 3 Model B+][buy-raspberry-pi].
 
-### Raspberry Pi Camera
+### Raspberry Pi camera
 
 The Raspberry Pi has a dedicated camera port for the Raspberry Pi Camera. This is an 8 megapixel camera capable of frame rates as high as 90 frames-per-second and comes in two flavors, the [Pi NOIR Camera][raspberry-pi-noir] which can capture images/video using infrared (IR) lights and the '[normal][raspberry-pi-camera]' camera which can capture images/video using visible (white) light. We generally use the [Pi NOIR][raspberry-pi-noir] version to record video in behavior boxes during both the daytime (white LEDs) and night-time (IR LEDs) as well as on the scope to record video during two-photon imaging in the dark using IR LEDs.
+
+### Analog video output
+
+The Raspberry Pi has a 3.5mm headphone jack that can be used to view an anlog video stream from the Pi camera. The headphone jack needs to have 4-poles (bands), [something like this](https://www.amazon.com/Parts-Express-3-5mm-Plug-Cable/dp/B0007V6JCK/ref=sr_1_15?s=audio-video-accessories&ie=UTF8&qid=1540573388&sr=1-15&keywords=video+jack). The analog video can be connected directly to any monitor that accepts and RCA video input. Alternatively, the analog video can be sent to another computer using an analog video to USB converter, [something like this](https://www.amazon.com/gp/product/B00LVTUX7E/ref=oh_aui_detailpage_o01_s00?ie=UTF8&psc=1). These video to USB converters are for some reason a large gray market and you need to be careful when ordering (you might get junk that does not work). In general, these video/USB converters use the [easycap driver](https://visser.io/2015/06/easycap-drivers-for-windows-8-1/).
+
+The PiE server will output a live video feed when 'arm' is checked. This video feed does not interfere with simultaneous video recording to a file.
 
 ### Two channel relay
 
