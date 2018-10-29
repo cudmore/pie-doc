@@ -338,6 +338,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#server-swarm" title="Server swarm" class="md-nav__link">
+    Server swarm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swarm-status" title="Swarm status" class="md-nav__link">
+    Swarm status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#video-wall" title="Video wall" class="md-nav__link">
+    Video wall
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -360,13 +381,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-screen-shot-of-the-commander-controlling-8-pie-servers" title="Example screen shot of the commander controlling 8 PiE servers." class="md-nav__link">
-    Example screen shot of the commander controlling 8 PiE servers.
-  </a>
   
 </li>
       
@@ -622,6 +636,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#server-swarm" title="Server swarm" class="md-nav__link">
+    Server swarm
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swarm-status" title="Swarm status" class="md-nav__link">
+    Swarm status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#video-wall" title="Video wall" class="md-nav__link">
+    Video wall
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -644,13 +679,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-screen-shot-of-the-commander-controlling-8-pie-servers" title="Example screen shot of the commander controlling 8 PiE servers." class="md-nav__link">
-    Example screen shot of the commander controlling 8 PiE servers.
-  </a>
   
 </li>
       
@@ -698,10 +726,38 @@
 <p>If you run into trouble with the commander, run it on the command line to see the output with <code>./commander run</code>.</p>
 <h2 id="web-interface">Web interface</h2>
 <h3 id="editing-ip-addresses">Editing IP addresses</h3>
-<p>In the config section, turn on 'edit ip' checkbox. Enter a valid IP and hit enter. If the IP is for a running PiE server (no port number needed), the red (bad connection) will be replaced with the current status of the specified PiE server.</p>
+<p>In the config section, turn on 'edit ip' checkbox. Enter a valid IP and hit enter. If the IP is for a running PiE server (no port number needed), the red (bad connection) will be replaced with the current status of the specified PiE server. See 'Server Swarm' below.</p>
 <h3 id="warnings-and-errors">Warnings and errors</h3>
 <p>When a PiE server is connected, the corresponding row in 'Server Swarm' will be filled in and active. When there is a connection error, the first column will appear red and all other controls will be inactive.</p>
 <p>When the drive space remaining goes below 5 GB, the 'File' column will be displayed in red. Currently, there is no interface to set this trip-point, 5 GB is  <strong>hard-coded</strong> in the commander index.html. Feel free to change it yourself.</p>
+<h3 id="server-swarm">Server swarm</h3>
+<p>Here, the commander is controlling 8 PiE servers. Server 3 (hc3) is recording, server 7 has a connection error, and server 8 (hc8) is streaming. Click image to enlarge.</p>
+<p><a href="../img/commander/commander-server-swarm.png">
+    <img src="../img/commander/commander-server-swarm.png" class="img-fluid">
+</a></p>
+<h3 id="swarm-status">Swarm status</h3>
+<p>The swarm status is a clearinghouse of information for each PiE server. This includes buttons to restart the PiE server and reboot the raspberry Pi. Click image to enlarge.</p>
+<p><a href="../img/commander/commander-swarm-status.png">
+    <IMG SRC="../img/commander/commander-swarm-status.png">
+</a></p>
+<h3 id="video-wall">Video wall</h3>
+<table>
+<tr>
+    <td>
+    <a href="../img/commander/video-wall-screenshot-1.png">
+        <IMG SRC="../img/commander/video-wall-screenshot-1.png" width="550">
+    </a>
+    </td>
+</tr>
+<tr>
+    <td>
+    <a href="../img/commander/video-wall-screenshot-2.png">
+        <IMG SRC="../img/commander/video-wall-screenshot-2.png" width="550">
+    </a>
+    </td>
+</tr>
+</table>
+
 <h2 id="troubleshooting">Troubleshooting</h2>
 <h3 id="run-the-commander-manually">Run the commander manually</h3>
 <p><code>install-commander</code> installs a python virtual env in ~/pie/commander_app/commander_env. The commander server needs to be run in this environment.</p>
@@ -714,16 +770,6 @@ source commander_env/bin/activate
 # run the commander server manually
 python commander.py
 </code></pre>
-
-<h2 id="example-screen-shot-of-the-commander-controlling-8-pie-servers">Example screen shot of the commander controlling 8 PiE servers.</h2>
-<table>
-<tr><td>
-<IMG SRC="../img/video-wall-screenshot-1.png" width="550">
-</td></tr>
-<tr><td>
-<IMG SRC="../img/video-wall-screenshot-2.png" width="550">
-</td></tr>
-</table>
                 
                   
                 

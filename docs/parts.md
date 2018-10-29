@@ -1,5 +1,7 @@
 [Jump to the actual parts list](#parts-list)
 
+## Overview
+
 ### Raspberry Pi
 
 The [Raspberry Pi][raspberry-pi] is a complete computer system in an almost credit card size. It has ethernet, USB, general-purpose-input-output pins (GPIO), a dedicated camera port, and runs a version of Debian Linux called [Rasbian][raspbian]. You can pick up the current model, a [Raspberry Pi 3 Model B+][buy-raspberry-pi].
@@ -10,7 +12,7 @@ The Raspberry Pi has a dedicated camera port for the Raspberry Pi Camera. This i
 
 ### Analog video output
 
-The Raspberry Pi has a 3.5mm headphone jack that can be used to view an anlog video stream from the Pi camera. The headphone jack needs to have 4-poles (bands), [something like this](https://www.amazon.com/Parts-Express-3-5mm-Plug-Cable/dp/B0007V6JCK/ref=sr_1_15?s=audio-video-accessories&ie=UTF8&qid=1540573388&sr=1-15&keywords=video+jack). The analog video can be connected directly to any monitor that accepts and RCA video input. Alternatively, the analog video can be sent to another computer using an analog video to USB converter, [something like this](https://www.amazon.com/gp/product/B00LVTUX7E/ref=oh_aui_detailpage_o01_s00?ie=UTF8&psc=1). These video to USB converters are for some reason a large gray market and you need to be careful when ordering (you might get junk that does not work). In general, these video/USB converters use the [easycap driver](https://visser.io/2015/06/easycap-drivers-for-windows-8-1/).
+The Raspberry Pi has a 3.5mm headphone jack that can be used to view an analog video stream from the Pi camera. The headphone jack needs to have 4-poles (bands), [something like this](https://www.amazon.com/Parts-Express-3-5mm-Plug-Cable/dp/B0007V6JCK/ref=sr_1_15?s=audio-video-accessories&ie=UTF8&qid=1540573388&sr=1-15&keywords=video+jack). The analog video can be connected directly to any monitor that accepts an RCA video input. Alternatively, the analog video can be sent to another computer using an analog video to USB converter, [something like this](https://www.amazon.com/gp/product/B00LVTUX7E/ref=oh_aui_detailpage_o01_s00?ie=UTF8&psc=1). These video to USB converters are for some reason a large gray market area and you need to be careful when ordering as you might get junk that does not work. In general, these video/USB converters use the [easycap driver](https://visser.io/2015/06/easycap-drivers-for-windows-8-1/).
 
 The PiE server will output a live video feed when 'arm' is checked. This video feed does not interfere with simultaneous video recording to a file.
 
@@ -30,7 +32,7 @@ If you need to connect the Raspberry Pi directly to 5V TTL lab equipment you **n
 
 ### Teensy microcontroller
 
-We are using [Teensy 3.2 or 3.5][teensy] microcontrollers. They are Arduino compatible but have a lot more features. These microcontrollers can be programmed from the command line using [platformio][platformio], no need for the Arduino IDE. To use platformio, the Raspberry Pi needs a few simple system wide configurations, see the readme in [pie/platformio](platformio/). 
+We are using [Teensy 3.2 or 3.5][teensy] microcontrollers. They are Arduino compatible but have a lot more features. These microcontrollers can be programmed from the command line using [platformio][platformio], no need for the Arduino IDE. To use platformio, the Raspberry Pi needs a few simple system wide configurations, see the readme in [pie/platformio](https://github.com/cudmore/pie/tree/master/platformio). 
 
 ### Stepper motor and  driver
 
@@ -45,17 +47,26 @@ Total cost for home-cage and/or on the scope video recording is around $200.
 
 |Quatity	|Item	| Purpose |Cost	| Vendor Link
 | -----		| -----	| -----	| -----	| -----
-|1	|Raspberry Pi 3 Model B  | Computer system including computer, SD card, power, case, etc. etc. |$75	|[amazon](https://www.amazon.com/CanaKit-Raspberry-Complete-Starter-Kit/dp/B01C6Q2GSY)
+|1	|Raspberry Pi 3 Model B  | Raspberry Pi system including computer, SD card, power, and case. In general, buy a kit from Canakit. |$75	|[amazon](https://www.amazon.com/CanaKit-Raspberry-Complete-Starter-Kit/dp/B01C6Q2GSY)
 |1	| USB Flash Drive, 64GB | To save recorded video | $17 | [amazon][usb-flash-drive]
-|1	|Pi NoIR Camera v2, 8MP	 | IR video camera |$30	|[adafruit](https://www.adafruit.com/products/3100)
+|1	|(either this) Pi NoIR Camera v2, 8MP	 | IR video camera |$30	|[adafruit](https://www.adafruit.com/products/3100)
+|1	|(or this) Pi Camera v2, 8MP	 | Video camera |$30	|[adafruit](https://www.adafruit.com/product/3099)
 |1	|(either this) Pi Camera Ribbon cable (2 meters)	| Flat ribbon cable to connect camera to computer (not optimal) |$6	|[adafruit](https://www.adafruit.com/products/2144)
 |1	|(or this 1/2) Pi Camera HDMI extension cable	| Allows camera to connect to computer using an HDMI cable |$15	|[tindie](https://www.tindie.com/products/freto/pi-camera-hdmi-cable-extension/)
 |1	|(and this 2/2) HDMI Cable of sufficient length	| Male/Male HDMI cable | $7 - $15	| [amazon][hdmi-cable]	| 
+| 1				| Ethernet cable	of sufficient length | Connect the computer to the network | $5 - $20	| [amazon][ethernet-cable]
+
+### For video recording in a behavior box
+
+|Quatity	|Item	| Purpose |Cost	| Vendor Link
+| -----		| -----	| -----	| -----	| -----
 |1	| SainSmart 2-Channel Relay Module | Allow computer to switch LEDs on/off | $9 | [amazon][two-channel-relay]
-|>4	|IR LEDs, 840-850 nm	| Illuminate in light proof imaging box. Original v1 camera did not work well with 960nm LEDs, need to check v2 camera. |$1 each	|[sparkfun][irled_sparkfun]
+|1-2	| White LEDs	| White light for behavior box	| $5	| [sparkfun](https://www.sparkfun.com/products/12014)
+|>4	|IR LEDs, 840-850 nm	| IR light for behavior box. Pi Camera picks up ~850 nm light well, do not use 950 nm. |$1 each	|[sparkfun][irled_sparkfun]
 |>1	|Universal 4-LED Miniature Wedge Base PCB	| To mount 4x LEDs + required resistor |$1 each	|[super-bright-led][super-bright-led-board]
 |1	| 12V 2A LED Driver (does not come with wall plug)	| Power the IR LEDs | $12	| [amazon][led-driver]
-| 1				| Ethernet cable	of sufficient length | Connect the computer to the network | $5 - $20	| [amazon][ethernet-cable]
+|1	| Temperature/humidity sensor						| Measure temperature/humidity	| $10-$15	| Either [am2302][am2302] or [dht22][]
+| 1	| Wire | To wire LEDs into box | $17 | [sparkfun][sparkfun-wire]
 
 ### For video recording on a scope with triggering and frame clock
 
@@ -63,13 +74,8 @@ Total cost for home-cage and/or on the scope video recording is around $200.
 | -----		| -----	| -----	| -----	| -----
 |1	|4-channel Logic Level Converter (Bi-Directional)	| To connect 5V TTL lab equipment to 3V computer GPIO |$4	|[Sparkfun][loginlevelconverter_sparkfun], [Adafruit][loginlevelconverter_adafruit]
 | 1	| Tripod Swivel | To mount the camera on an optical post and be able to angle it. | $9 | [amazon][tripod-mount]
-
-### Miscellaneous
-|Quatity	|Item	| Purpose |Cost	| Vendor Link
-| -----		| -----	| -----	| -----	| -----
-| 1 	| Breadboard and jumper cables | A breadboard and a mixture of jumper cables: male/male, male/female, and female/female | $11 | [amazon][breadboard]
-| 1	| Wire | To wire LEDs into light proof box | $17 | [sparkfun][sparkfun-wire]
-
+| 1	| 4-pole 3.5mm headphone jack	| Output analog video from the Pi	| $6	| [amazon](https://www.amazon.com/Parts-Express-3-5mm-Plug-Cable/dp/B0007V6JCK/ref=sr_1_15?s=audio-video-accessories&ie=UTF8&qid=1540573388&sr=1-15&keywords=video+jack])
+| 1	| Video to USB converter	| Convert analog video to USB to view video on a computer	| $15	| [amazon](https://www.amazon.com/gp/product/B00LVTUX7E/ref=oh_aui_detailpage_o01_s00?ie=UTF8&psc=1)
 
 ### For controlling a motorized treadmill with a microcontroller
 
@@ -79,6 +85,7 @@ Total cost for home-cage and/or on the scope video recording is around $200.
 | 1			| EasyDriver - Stepper Motor Driver	| Motor controller for stepper motor	| $15 | [sparkfun][big-easy-driver]
 | 1			| Stepper Motor | Share 12V 2A LED Driver for power | $15 | [sparkfun][stepper-motor]
 | 1			| Rotary encoder	| Honeywell-600-128-CBL | $51 | [digi-key][rotary-encoder] or [this][rotary-encoder-2]
+| 1 		| Breadboard and jumper cables | A breadboard and a mixture of jumper cables: male/male, male/female, and female/female | $11 | [amazon][breadboard]
 
 ### Building a treadmill
 
@@ -143,6 +150,7 @@ These are **Actobotics** parts from [ServoCity][servocity]
 [raspberry-pi]: https://www.raspberrypi.org/
 [buy-raspberry-pi]: https://www.raspberrypi.org/products/
 [buy-noir]: https://www.adafruit.com/product/3100?src=raspberrypi
+[buy-camera]: https://www.adafruit.com/product/3099
 [raspbian]: https://www.raspberrypi.org/downloads/raspbian/
 [raspberry-pi-noir]: https://www.raspberrypi.org/products/pi-noir-camera-v2/
 [raspberry-pi-camera]: https://www.raspberrypi.org/products/camera-module-v2/
@@ -153,3 +161,6 @@ These are **Actobotics** parts from [ServoCity][servocity]
 [sainsmart-relay]: https://www.amazon.com/SainSmart-101-70-100-2-Channel-Relay-Module/dp/B0057OC6D8
 [teensy]: https://www.pjrc.com/teensy/
 [platformio]: https://platformio.org/
+
+[am2302]: https://www.adafruit.com/product/393
+[dht22]: https://www.adafruit.com/product/385
