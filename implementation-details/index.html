@@ -1,0 +1,824 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Raspberry Pi Controlled Experiment (PiE)">
+      
+      
+      
+        <meta name="author" content="Robert H Cudmore">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../img/icons/video-camera-blue.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.0.4">
+    
+    
+      
+        <title>Implementation details - PiE Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+      
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../#raspberry-pi" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="PiE Docs" class="md-header-nav__button md-logo">
+          
+            <img src="../img/icons/video-camera-blue.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                PiE Docs
+              </span>
+              <span class="md-header-nav__topic">
+                Implementation details
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/cudmore/pie" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      PiE Repository
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="PiE Docs" class="md-nav__button md-logo">
+      
+        <img src="../img/icons/video-camera-blue.png" width="48" height="48">
+      
+    </a>
+    PiE Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/cudmore/pie" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      PiE Repository
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../install/" title="Install" class="md-nav__link">
+      Install
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../web-interface/" title="Web Interface" class="md-nav__link">
+      Web Interface
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../commander/" title="Commander" class="md-nav__link">
+      Commander
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../parts/" title="Parts" class="md-nav__link">
+      Parts
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../wiring-behavior-box/" title="Wiring - Behavior Box" class="md-nav__link">
+      Wiring - Behavior Box
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../wiring-scope/" title="Wiring - Scope" class="md-nav__link">
+      Wiring - Scope
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../wiring-treadmill/" title="Wiring - Treadmill" class="md-nav__link">
+      Wiring - Treadmill
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../images/" title="Images" class="md-nav__link">
+      Images
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../troubleshooting/" title="Troubleshooting" class="md-nav__link">
+      Troubleshooting
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" checked>
+    
+    <label class="md-nav__link" for="nav-11">
+      Extras
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        Extras
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../rest-interface/" title="Rest Interface" class="md-nav__link">
+      Rest Interface
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../trial-file/" title="Trial File" class="md-nav__link">
+      Trial File
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../gpio-timing/" title="GPIO Timing" class="md-nav__link">
+      GPIO Timing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../file-server/" title="File Server" class="md-nav__link">
+      File Server
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mount-usb-drive/" title="Mount USB Drive" class="md-nav__link">
+      Mount USB Drive
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Implementation details
+      </label>
+    
+    <a href="./" title="Implementation details" class="md-nav__link md-nav__link--active">
+      Implementation details
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#raspberry-pi" title="Raspberry Pi" class="md-nav__link">
+    Raspberry Pi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#back-end" title="Back End" class="md-nav__link">
+    Back End
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web-server" title="Web server" class="md-nav__link">
+    Web server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-class-library" title="Python class library" class="md-nav__link">
+    Python class library
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#front-end" title="Front End" class="md-nav__link">
+    Front End
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#admin-server" title="Admin server" class="md-nav__link">
+    Admin server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commander-server" title="Commander server" class="md-nav__link">
+    Commander server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" title="Components" class="md-nav__link">
+    Components
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uv4l" title="uv4l" class="md-nav__link">
+    uv4l
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avconv" title="avconv" class="md-nav__link">
+    avconv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dht-sensors" title="DHT sensors" class="md-nav__link">
+    DHT sensors
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" title="Documentation" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../release-notes/" title="Release Notes" class="md-nav__link">
+      Release Notes
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../about/" title="About" class="md-nav__link">
+      About
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#raspberry-pi" title="Raspberry Pi" class="md-nav__link">
+    Raspberry Pi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#back-end" title="Back End" class="md-nav__link">
+    Back End
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#web-server" title="Web server" class="md-nav__link">
+    Web server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#python-class-library" title="Python class library" class="md-nav__link">
+    Python class library
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#front-end" title="Front End" class="md-nav__link">
+    Front End
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#admin-server" title="Admin server" class="md-nav__link">
+    Admin server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commander-server" title="Commander server" class="md-nav__link">
+    Commander server
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#components" title="Components" class="md-nav__link">
+    Components
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uv4l" title="uv4l" class="md-nav__link">
+    uv4l
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avconv" title="avconv" class="md-nav__link">
+    avconv
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dht-sensors" title="DHT sensors" class="md-nav__link">
+    DHT sensors
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" title="Documentation" class="md-nav__link">
+    Documentation
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Implementation details</h1>
+                
+                <p>Once running, the PiE server should be simple to use and only requires interaction with its <a href="../web-interface/">web interface</a>. Yet, for this simple system to work, a number of independent components must each work and must communicate with each other. As is often the case, the details in creating a simple system is complex.</p>
+<p>What follows is a description of the different pieces of the PiE server with links to the source code and the components that are used.</p>
+<h2 id="raspberry-pi">Raspberry Pi</h2>
+<p>At its core, this system requires a functioning Raspberry Pi running the <a href="https://www.raspberrypi.org/documentation/raspbian/">Raspbian</a> operating system. Because this is an intentionally stripped down system, some things are not installed out of the box like <a href="../mount-usb-drive/">mounting a USB drive</a>. On the other hand, this is a full-fledged <a href="https://www.debian.org/">Debian Linux</a> system so you can activate powerful features such as a <a href="../file-server/">file-server</a>.</p>
+<h2 id="back-end">Back End</h2>
+<h3 id="web-server">Web server</h3>
+<ul>
+<li><a href="https://github.com/cudmore/pie/blob/master/pie_app/treadmill_app.py">pie_app/treadmill_app.py</a> - This code creates the main PiE web server (running on port 5010) using <a href="http://flask.pocoo.org/">Flask</a> and is the main starting point to run the PiE server. It acts as a connection between web requests (URLs) and the backend by processing each incoming URL and calling the appropriate backend code in <a href="https://github.com/cudmore/pie/blob/master/pie_app/treadmill.py">pie_app/treadmill.py</a>.</li>
+</ul>
+<h3 id="python-class-library">Python class library</h3>
+<ul>
+<li>
+<p><a href="https://github.com/cudmore/pie/blob/master/pie_app/treadmill.py">pie_app/treadmill.py</a> - Wrapper class around <a href="https://github.com/cudmore/pie/blob/master/pie_app/bTrial.py">pie_app/bTrial.py</a> to implement specifics of the PiE server beyond what bTrial provides. This mainly includes some logic using web sockets, in particular <a href="https://flask-socketio.readthedocs.io/en/latest/">flask-socketio</a>, for bi-directional communication from the browser to the backend and from the backend to the browser.</p>
+</li>
+<li>
+<p><a href="https://github.com/cudmore/pie/blob/master/pie_app/bTrial.py">pie_app/bTrial.py</a> - Main catch-all class that implements the logic of a trial based experiment. When it is instantiated, it creates a number of background threads to control independent processes including: GPIO pins, the timing of automatic lights, temperature/humidity readings, and serial communication with a Teensy. The use of background threads is important, they are run in parallel to the main code (utilizing the Raspberry Pis 4-core CPU) and allow everything to run smoothly with minimal <a href="https://en.wikipedia.org/wiki/Blocking_(computing)">blocking</a>. Once running, bTrial receives commands from the web interface in treadmill_app.py to take actions like: changing/loading/saving user configurations, starting/stopping video recording and streaming, setting GPIO pins, and performing serial communication with a Teensy.</p>
+</li>
+<li>
+<p><a href="https://github.com/cudmore/pie/blob/master/pie_app/bCamera.py">pie_app/bCamera.py</a> - Code to control a Raspberry Pi camera using the <a href="https://picamera.readthedocs.io">piCamera</a> Python library. This is where both video recording and streaming with uv4l is started and stopped. This also contains a background thread that uses avconv to convert .h264 video saved by the camera into .mp4.</p>
+</li>
+<li>
+<p><a href="https://github.com/cudmore/pie/blob/master/pie_app/bPins.py">pie_app/bPins.py</a> - Code to control the Raspberry Pi GPIO pins using either <a href="https://pypi.org/project/RPi.GPIO/">RPi.GPIO</a> or the <a href="http://abyz.me.uk/rpi/pigpio/">pigpio</a> daemon. This is where the PiE server can change GPIO pins and where code is triggered when a pin changes from an external source like a microscope.</p>
+</li>
+<li>
+<p><a href="https://github.com/cudmore/pie/blob/master/pie_app/bSerial.py">pie_app/bSerial.py</a> - Code to communicate with an Arduino/Teensy microcontroller over a serial connection (via a USB cable). This is basically to get and set parameters as well as starting/stopping a trial on the Teensy. It works as a background thread instantiated by bTrial and then sits silently waiting for commands to be inserted into a queue. This is not used to program the Teensy, that is handled by <a href="https://github.com/cudmore/pie/tree/master/platformio">platformio</a></p>
+</li>
+<li>
+<p><a href="https://github.com/cudmore/pie/blob/master/pie_app/bUtil.py">pie_app/bUtil.py</a> - Implements basic utility functions like fetching the system date/time, determining the amount of drive space remaining, and getting the IP address and hostname.</p>
+</li>
+<li>
+<p><a href="https://github.com/cudmore/pie/tree/master/pie_app/config">pie_app/config</a> - Text files written in <a href="https://www.json.org/">json</a> that provides human editable configuration options for the server. These json files are loaded when the server starts and are saved when the user saves from the web interface. These json files contain all the configurable options provided by the PiE server, things like the default state of GPIO pins and configurations like the video recording duration and number of repeats.</p>
+</li>
+</ul>
+<h2 id="front-end">Front End</h2>
+<p>The backend web server in <a href="https://github.com/cudmore/pie/blob/master/pie_app/treadmill_app.py">pie_app/treadmill_app.py</a> delivers .html pages which have logic driven by Javascript (.js) and formatted with .css.</p>
+<ul>
+<li>
+<p><a href="https://github.com/cudmore/pie/blob/master/pie_app/templates/index.html">pie_app/templates/index.html</a> - Main web interface written in <a href="https://en.wikipedia.org/wiki/HTML">html</a>, uses <a href="https://www.javascript.com/">Javascript</a> and the Javascript <a href="https://angularjs.org/">Angular</a> library to provide dynamic and real-time content.</p>
+</li>
+<li>
+<p><a href="https://github.com/cudmore/pie/blob/master/pie_app/static/treadmill.js">pie_app/static/treadmill.js</a> - <a href="https://www.javascript.com/">Javascript</a> code that implementes the logic of the web interface. Has functions that get called when user is clicking or entering parameter values. Also has function to talk to <a href="https://github.com/cudmore/pie/blob/master/pie_app/treadmill_app.py">treadmill_app.py</a> web server via a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> interface. This is not standard Javascript but is using the <a href="https://angularjs.org/">Angular</a> library.</p>
+</li>
+<li>
+<p><a href="https://github.com/cudmore/pie/blob/master/pie_app/static/treadmill.css">pie_app/static/treadmill.css</a> - A <a href="https://www.w3schools.com/css/css_intro.asp">Cascading Style Sheet (css)</a> text file that describes the precise visual layout of the web pages.</p>
+</li>
+<li>
+<p>Miscellaneous - Each webpage served by the PiE server needs a .html file and often uses a Javascript .js file to control the logic of user interaction. This includes <a href="https://github.com/cudmore/pie/blob/master/pie_app/templates/videolist.html">videolist.html</a> which serves a list of video files saved on the Pi and <a href="https://github.com/cudmore/pie/blob/master/pie_app/templates/environment.html">environment.html</a> along with <a href="https://github.com/cudmore/pie/blob/master/pie_app/static/environment.js">environment.js</a> which controls the web based plotting of temperature and humidity.</p>
+</li>
+</ul>
+<h2 id="admin-server">Admin server</h2>
+<p>The <a href="https://github.com/cudmore/pie/tree/master/admin_app">admin_app</a> contains a second web server (running on port 5011) allowing the main PiE server (running on port 5010) to be restarted and the Raspberry Pi to be rebooted. This is necessary to allow all this to happen from the PiE <a href="../web-interface/">web interface</a>. This admin app is automatically installed when the PiE server is installed with <code>./install-pie</code> and should not need further tweaking.</p>
+<h2 id="commander-server">Commander server</h2>
+<p>The <a href="https://github.com/cudmore/pie/tree/master/commander_app">commander_app</a> creates a web interface (running on port 8000) to control any number of PiE servers (on port 5010) running on different Raspberry Pis. The commander server runs completely independent of the PiE server and can be installed on its own dedicated Raspberry Pi or one that is already running the PiE server. See the <a href="../commander/">commander</a> documentation for more details.</p>
+<p><strong>Note..</strong> In a near future version, the commander will be able to run on any other machine including macOS and Microsoft Windows computers.</p>
+<h2 id="components">Components</h2>
+<h3 id="uv4l">uv4l</h3>
+<p>The <a href="https://www.linux-projects.org/uv4l/">uv4l</a> system is used to streaming video from the camera to a web browser. This is a system wide program and is controlled from bCamera using bash script in <a href="https://github.com/cudmore/pie/tree/master/pie_app/bin">pie_app/bin</a>.</p>
+<h3 id="avconv">avconv</h3>
+<p>The <a href="https://libav.org/avconv.html">avconv</a> package (also known as libav) is used to convert .h264 files saved by the camera to .mp4. This is a system wide program and is controlled from bCamera using bash script in <a href="https://github.com/cudmore/pie/tree/master/pie_app/bin">pie_app/bin</a>.</p>
+<h3 id="dht-sensors">DHT sensors</h3>
+<p>Readings from AM2302 and DHT22 temperature/humidity sensors requires the Adafruit Python library <a href="https://github.com/adafruit/Adafruit_Python_DHT">Adafruit_Python_DHT</a>. Readings are implemented in a background task in bTrial.</p>
+<h2 id="documentation">Documentation</h2>
+<p>Last but not least, this website is written in <a href="https://en.wikipedia.org/wiki/Markdown">markdown</a>. The markdown and a description of the contents using <a href="http://yaml.org/">yaml</a> are brought together, compiled, and a static site is generated by <a href="http://www.mkdocs.org/">mkdocs</a>. The final layout is controlled by an mkdocs theme called <a href="https://squidfunk.github.io/mkdocs-material/">material</a>. All of this is then pushed to <a href="http://github.com">Github</a> which serves this website fast and reliable.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.583bbe55.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="../javascripts/extra.js"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
