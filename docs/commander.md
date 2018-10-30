@@ -1,5 +1,7 @@
 Commander is a web server (port 8000) to control any number of PiE servers running on different computers (port 5010).
 
+The commander is most easily installed on a Raspberry Pi but because it only uses Python and Javascript it is possible to install the commander on any type of machine including macOS and Microsoft Windows.
+
 ## Install
 
 	cd ~/pie/commander

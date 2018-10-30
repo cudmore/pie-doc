@@ -25,6 +25,7 @@ nav:
    - GPIO Timing: gpio-timing.md
    - File Server: file-server.md
    - Mount USB Drive: mount-usb-drive.md
+   - Implementation details: implementation-details.md
  - Release Notes: release-notes.md
  - About: about.md
    
