@@ -8,9 +8,20 @@
  - Have some mechanism to roll-over or otherwise replace the continuous environment log file.
  - [done 20181018] Add code to check the camera as PiE server starts. This way, user can look at logs to troubleshoot.
  - Add popup to web interface for selecting supported DHT (AM2302, DHT11) sensors
+ - [20181114] Have continuous environmental log also log status of the lights. Once done, add gray bars to environment plot to show when light actually came on/off.
  
 ### Major Changes
 
+20181114
+
+ - Revamped environmental log page.
+    - Now using fixed y-axis for humidity in range 0..80
+    - Added controls to set y-axis of temperature.
+    - Showing last read timestamp, temerature, and humidity at top of page
+    - Added button to reload page. Once loaded, the page is static (does not continuously poll server). Clicking 'reload page' will fetch new values from server.
+    - Reversed order of table to show last reading first.
+    - The page is now using javascript and angular
+  
 20181013
 
  - Moved environment logs to /home/pie/video/logs. This way they can be browsed and will not be trashed on full reinstall
@@ -82,7 +93,9 @@ Run on an external port
 
 	cd ~/pie/docs
 	mkdocs serve -a 192.168.1.4:8000
-
+	# if that does not work, then
+	mkdocs serve --dev-addr=0.0.0.0:8000
+	
 Push to github
 
 	cd ~/pie/docs
