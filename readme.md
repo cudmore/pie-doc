@@ -5,3 +5,7 @@ Read the PiE documentation here [https://cudmore.github.io/pie-doc](https://cudm
 Browse the main PiE repository here [https://github.com/cudmore/pie](https://github.com/cudmore/pie).
 
 This documentation is created with [MkDocs](https://www.mkdocs.org/).
+
+To push changes to build
+
+    mkdocs gh-deploy

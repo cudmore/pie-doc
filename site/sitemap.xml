@@ -1,93 +1,156 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-14</lastmod>
+     <loc>/</loc>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-14</lastmod>
+     <loc>/about/</loc>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-14</lastmod>
+     <loc>/commander/</loc>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-14</lastmod>
+     <loc>/file-server/</loc>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-14</lastmod>
+     <loc>/gpio-timing/</loc>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-14</lastmod>
+     <loc>/images/</loc>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-14</lastmod>
+     <loc>/implementation-details/</loc>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-14</lastmod>
+     <loc>/install/</loc>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-14</lastmod>
+     <loc>/mount-usb-drive/</loc>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-14</lastmod>
+     <loc>/parts/</loc>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-14</lastmod>
+     <loc>/readme/</loc>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-14</lastmod>
+     <loc>/release-notes/</loc>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-14</lastmod>
+     <loc>/rest-interface/</loc>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-14</lastmod>
+     <loc>/trial-file/</loc>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-14</lastmod>
+     <loc>/troubleshooting/</loc>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-14</lastmod>
+     <loc>/web-interface/</loc>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-14</lastmod>
+     <loc>/wiring-behavior-box/</loc>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2018-11-14</lastmod>
+     <loc>/wiring-scope/</loc>
+     <lastmod>2019-01-04</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
+    <url>
+     <loc>/wiring-treadmill/</loc>
+     <lastmod>2019-01-04</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
 </urlset>
