@@ -1,20 +1,63 @@
-Commander is a web server (port 8000) to control any number of PiE servers running on different computers (port 5010).
+Commander is a web server to control any number of PiE servers running on different computers. The commander can be run on Linux, macOS, and Microsoft windows.
 
-The commander is most easily installed on a Raspberry Pi but because it only uses Python and Javascript it is possible to install the commander on any type of machine including macOS and Microsoft Windows.
+## Requirements
+
+Commander requires Python 3.7.2 or greater.
 
 ## Install
 
-	cd ~/pie/commander
-	./install-commander
+### macOS and Linux
 
+```
+# either download
+git clone https://github.com/cudmore/pie
+
+# or if you do not have git
+# browse to the PiE GitHub repository and manually download the .zip
+# uncompress the .zip and continue
+
+# install
+cd ~/pie/commander
+./install-commander
+
+# run the commander 
+./commander run
+```
+	
+### Microsoft Windows
+
+```
+# either download
+git clone https://github.com/cudmore/pie
+
+# or if you do not have git
+# browse to the PiE GitHub repository and manually download the .zip
+# uncompress the .zip and continue
+
+# make sure you are suing Python 3.7.2
+python --version
+
+# install
+cd pie
+cd commander_app
+python -m pip install -r requirements.txt
+
+# run the commander
+python commander.py
+```
 
 ## Browse
 
+Once installed and running and assuming there are no errors, the commander interface can be browsed at `http://[IP]:8000` where [IP] is the IP address of your computer.
+
 	http://[IP]:8000
 
-Once `install-commander` is finished and assuming there are no errors, the commander interface can be browsed at `http://[IP]:8000` where [IP] is the IP address of your Raspberry Pi.
+When running locally, use 'localhost' in place of [IP], like this
 
-## Starting and stopping commander server
+	http://localhost:8000
+
+
+## Starting and stopping commander server (Linux only)
 
 The commander server is designed to run in the background and can be controlled using the `~/pie/commander_app/commander` command.
 
@@ -79,11 +122,17 @@ The swarm status is a clearinghouse of information for each PiE server. This inc
 </tr>
 </table>
 
+### Commander sync
+
+The commander sync will sychronize files from any number of PiE servers to the computer running the commander.
+
+todo: ADD IMAGE
+
 ## Troubleshooting
 
 ### Run the commander manually
 
-`install-commander` installs a python virtual env in ~/pie/commander_app/commander_env. The commander server needs to be run in this environment.
+`./install-commander` installs a python virtual env in ~/pie/commander_app/commander_env. The commander server needs to be run in this environment.
 
 ```
 # activate virtual environment in commander_env
