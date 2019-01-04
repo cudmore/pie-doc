@@ -36,7 +36,7 @@
     
     
       
-        <title>Gpio timing - PiE Docs</title>
+        <title>Raspberry Pi Controlled Experiment (PiE) - PiE Docs</title>
       
     
     
@@ -92,7 +92,7 @@
                 PiE Docs
               </span>
               <span class="md-header-nav__topic">
-                Gpio timing
+                Raspberry Pi Controlled Experiment (PiE)
               </span>
             
           
@@ -253,57 +253,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="toc">
-        Gpio timing
-      </label>
-    
-    <a href="./" title="Gpio timing" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../gpio-timing/" title="Gpio timing" class="md-nav__link">
       Gpio timing
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#download-and-install-pigpio" title="Download and install pigpio" class="md-nav__link">
-    Download and install pigpio
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#to-start-the-pigpio-daemon" title="To start the pigpio daemon" class="md-nav__link">
-    To start the pigpio daemon
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#to-stop-the-pigpio-daemon" title="To stop the pigpio daemon" class="md-nav__link">
-    To stop the pigpio daemon
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -337,8 +291,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../install/" title="Install" class="md-nav__link">
-      Install
+    <a href="../install/" title="Install the PiE server" class="md-nav__link">
+      Install the PiE server
     </a>
   </li>
 
@@ -371,11 +325,20 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../readme/" title="Readme" class="md-nav__link">
-      Readme
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="./" title="Raspberry Pi Controlled Experiment (PiE)" class="md-nav__link md-nav__link--active">
+      Raspberry Pi Controlled Experiment (PiE)
     </a>
+    
   </li>
 
     
@@ -489,34 +452,8 @@
 <nav class="md-nav md-nav--secondary">
   
   
+    
   
-    <label class="md-nav__title" for="toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#download-and-install-pigpio" title="Download and install pigpio" class="md-nav__link">
-    Download and install pigpio
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#to-start-the-pigpio-daemon" title="To start the pigpio daemon" class="md-nav__link">
-    To start the pigpio daemon
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#to-stop-the-pigpio-daemon" title="To stop the pigpio daemon" class="md-nav__link">
-    To stop the pigpio daemon
-  </a>
-  
-</li>
-      
-      
-      
-    </ul>
   
 </nav>
                   </div>
@@ -529,28 +466,8 @@
               
                 
                 
-                  <h1>Gpio timing</h1>
-                
-                <p>The Raspberry Pi is running a fully functional operating system which provides many features including USB, ethernet, and HDMI. Thus, there will be unpredictable delays in receiving and generating general purpose input and output (GPIO). </p>
-<p>The PiE server uses the Raspberry <a href="https://sourceforge.net/p/raspberry-gpio-python/wiki/Home/">GPIO</a> python package by default and will use the <a href="http://abyz.me.uk/rpi/pigpio/pigpiod.html">pigpio daemon</a> if it is installed and running. The GPIO package has a jitter of approximately +/- 2 ms for all DIO with occasional, &lt; 1%, events having absurd jitter on the order of 100-200 ms. This includes trigger in, frame in, and any output. If you are using the PiE server to record video this should be fine. If you want more precision, either offload your timing critical tasks on a Teensy or use the Raspberry <a href="http://abyz.me.uk/rpi/pigpio/pigpiod.html">pigpiod</a> daemon.</p>
-<p>See the Jupyter notebooks in the <a href="https://github.com/cudmore/pie/tree/master/analysis">pie/analysis/</a> folder for a comparising of frame arrival times using GPIO versus pigpio.</p>
-<h3 id="download-and-install-pigpio">Download and install pigpio</h3>
-<pre><code>cd
-rm pigpio.zip
-sudo rm -rf PIGPIO
-wget abyz.me.uk/rpi/pigpio/pigpio.zip
-unzip pigpio.zip
-cd PIGPIO
-make
-sudo make install
-</code></pre>
-
-<h3 id="to-start-the-pigpio-daemon">To start the pigpio daemon</h3>
-<pre><code>sudo pigpiod
-</code></pre>
-<h3 id="to-stop-the-pigpio-daemon">To stop the pigpio daemon</h3>
-<pre><code>sudo killall pigpiod
-</code></pre>
+                <h1 id="raspberry-pi-controlled-experiment-pie">Raspberry Pi Controlled Experiment (PiE)</h1>
+<p>See web documentation at <a href="http://blog.cudmore.io/pie/">http://blog.cudmore.io/pie/</a>.</p>
                 
                   
                 
