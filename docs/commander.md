@@ -128,6 +128,80 @@ The commander sync will sychronize files from any number of PiE servers to the c
 
 todo: ADD IMAGE
 
+## Advanced usage
+
+When the commander is run it will create a 'commander_config' folder in your User folder. In this configuration folder is a configuration json file to control the commander.
+
+Here, you can control the PiE servers in the commander (can also be set in the web interface). You can also control the destination folder for downloaded files by specifying 'localFolder'. Make sure 'localFolder' is a full path to a folder on your computer. Something like '/Users/cudmore/commander_data'. Finally, make sure the download folder actually exists!
+
+Once this json configuration file is changed, restart the commander and reload the web-page with 'ctrl+r' for a full refresh. If you make errors in editing the json file, you will see them in the commander logs on the command prompt or in 'commander_config/commander.log'.
+
+```
+{
+    "localFolder": "",
+    "serverList": [
+        {
+            "ip": "192.168.1.4",
+            "password": "",
+            "username": ""
+        },
+        {
+            "ip": "192.168.1.15",
+            "password": "",
+            "username": ""
+        },
+        {
+            "ip": "192.168.1.3",
+            "password": "",
+            "username": ""
+        },
+
+        {
+            "ip": "10.16.81.33",
+            "password": "",
+            "username": ""
+        },
+        {
+            "ip": "10.16.81.34",
+            "password": "",
+            "username": ""
+        },
+        {
+            "ip": "10.16.81.35",
+            "password": "",
+            "username": ""
+        },
+        {
+            "ip": "10.16.81.36",
+            "password": "",
+            "username": ""
+        },
+        {
+            "ip": "10.16.81.37",
+            "password": "",
+            "username": ""
+        },
+        {
+            "ip": "10.16.81.38",
+            "password": "",
+            "username": ""
+        },
+        {
+            "ip": "10.16.81.39",
+            "password": "",
+            "username": ""
+        },
+        {
+            "ip": "10.16.81.41",
+            "password": "",
+            "username": ""
+        }
+        
+        
+    ],
+    "sshTimeout": 2
+}
+```
 ## Troubleshooting
 
 ### Run the commander manually
