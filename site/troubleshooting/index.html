@@ -479,9 +479,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#working-versions" title="Working versions" class="md-nav__link">
-    Working versions
+  <a href="#checking-system-and-software-versions" title="Checking system and software versions" class="md-nav__link">
+    Checking system and software versions
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-check-using-the-rest-interface" title="Version check using the rest interface" class="md-nav__link">
+    Version check using the rest interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-check-from-the-command-line" title="Version check from the command line" class="md-nav__link">
+    Version check from the command line
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-versions-to-check" title="Other versions to check" class="md-nav__link">
+    Other versions to check
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -642,9 +669,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#working-versions" title="Working versions" class="md-nav__link">
-    Working versions
+  <a href="#checking-system-and-software-versions" title="Checking system and software versions" class="md-nav__link">
+    Checking system and software versions
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-check-using-the-rest-interface" title="Version check using the rest interface" class="md-nav__link">
+    Version check using the rest interface
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-check-from-the-command-line" title="Version check from the command line" class="md-nav__link">
+    Version check from the command line
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-versions-to-check" title="Other versions to check" class="md-nav__link">
+    Other versions to check
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -749,45 +803,50 @@ cat config_user.json | python -m json.tool
 <pre><code>Expecting , delimiter: line 27 column 13 (char 648)
 </code></pre>
 
-<h2 id="working-versions">Working versions</h2>
-<p>Here is a snapshot of versions for a working PiE server as of October 2018. As python packages are updated, things can potentially break.</p>
+<h2 id="checking-system-and-software-versions">Checking system and software versions</h2>
+<p>The PiE server should work out of the box but as system and Python libraries are updated, things can potentially become broken. Thus, it is important to check and verify a number of system and Python Package versions. Here is a snapshot of versions for a working PiE server as of October 2018. As python packages are updated, things can potentially break.</p>
+<pre><code>=== linux:
+('debian', '9.4', '')
+Linux hc4 4.14.71-v7+ #1145 SMP Fri Sep 21 15:38:35 BST 2018 armv7l GNU/Linux
+=== python: 3.5.3 (default, Jan 19 2017, 14:11:04) [GCC 6.3.0 20170124]
+=== PiE: 20190104a
+=== picamera: [picamera 1.13 (/home/pi/pie/pie_env/lib/python3.5/site-packages)]
+=== RPi.GPIO: 0.6.3
+=== serial: 3.4
+=== flask: 1.0.2
+=== flask_cors: 3.0.6
+=== flask_socketio: 3.0.2
+=== avconv:
+ffmpeg version 3.2.10-1~deb9u1+rpt2 Copyright (c) 2000-2018 the FFmpeg developers
+built with gcc 6.3.0 (Raspbian 6.3.0-18+rpi1+deb9u1) 20170516
+configuration: --prefix=/usr --extra-version='1~deb9u1+rpt2' --toolchain=hardened --libdir=/usr/lib/arm-linux-gnueabihf --incdir=/usr/include/arm-linux-gnueabihf --enable-gpl --disable-stripping --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libebur128 --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmp3lame --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-omx-rpi --enable-mmal --enable-openal --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libiec61883 --arch=armhf --enable-chromaprint --enable-frei0r --enable-libopencv --enable-libx264 --enable-shared
+libavutil 55. 34.101 / 55. 34.101
+libavcodec 57. 64.101 / 57. 64.101
+libavformat 57. 56.101 / 57. 56.101
+libavdevice 57. 1.100 / 57. 1.100
+libavfilter 6. 65.100 / 6. 65.100
+libavresample 3. 1. 0 / 3. 1. 0
+libswscale 4. 2.100 / 4. 2.100
+libswresample 2. 3.100 / 2. 3.100
+libpostproc 54. 1.100 / 54. 1.100
+
+=== uv4l
+Userspace Video4Linux
+Copyright (C) Luca Risolia 
+Version 1.9.16 built on Oct 6 2018
+</code></pre>
+
+<h3 id="version-check-using-the-rest-interface">Version check using the rest interface</h3>
+<p>With a PiE server running, browse to this url:</p>
+<pre><code>http://[IP]:5010/version
+</code></pre>
+<h3 id="version-check-from-the-command-line">Version check from the command line</h3>
 <pre><code>cd ~/pie
 source pie_env/bin/activate # activate the Python3 virtual environment
-pip freeze # print all the Phython packages and their versions
-
-# use 'deactivate' to deactivate the Python3 virtual environmnet and return to the normal command prompt
+python version_check.py # run version check
 </code></pre>
 
-<pre><code># returns
-click==6.7
-dnspython==1.15.0
-eventlet==0.24.1
-Flask==1.0.2
-Flask-Cors==3.0.6
-Flask-SocketIO==3.0.1
-greenlet==0.4.14
-itsdangerous==0.24
-Jinja2==2.10
-MarkupSafe==1.0
-monotonic==1.5
-picamera==1.13
-pigpio==1.40.post1
-pkg-resources==0.0.0
-pyserial==3.4
-python-engineio==2.2.0
-python-socketio==2.0.0
-RPi.GPIO==0.6.3
-six==1.11.0
-Werkzeug==0.14.1
-</code></pre>
-
-<pre><code>python --version
-</code></pre>
-
-<pre><code># returns
-Python 3.5.3
-</code></pre>
-
+<h3 id="other-versions-to-check">Other versions to check</h3>
 <pre><code>cat /etc/os-release
 </code></pre>
 
