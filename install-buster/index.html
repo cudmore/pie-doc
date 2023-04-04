@@ -1,0 +1,1042 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Raspberry Pi Controlled Experiment (PiE)">
+      
+      
+        <meta name="author" content="Robert H Cudmore">
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../install/">
+      
+      <link rel="icon" href="../img/icons/video-camera-blue.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.3">
+    
+    
+      
+        <title>Preparing a Raspberry Pi - PiE Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.c4a75a56.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="PiE Docs" class="md-header__button md-logo" aria-label="PiE Docs" data-md-component="logo">
+      
+  <img src="../img/icons/video-camera-blue.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            PiE Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Preparing a Raspberry Pi
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/cudmore/pie" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    PiE Repository
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="PiE Docs" class="md-nav__button md-logo" aria-label="PiE Docs" data-md-component="logo">
+      
+  <img src="../img/icons/video-camera-blue.png" alt="logo">
+
+    </a>
+    PiE Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/cudmore/pie" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    PiE Repository
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Install
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Install
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Preparing a Raspberry Pi
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Preparing a Raspberry Pi
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-hardware" class="md-nav__link">
+    Required hardware
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-raspberry-pi-imager" class="md-nav__link">
+    Download Raspberry Pi Imager
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-the-raspberry-pi-os-buster" class="md-nav__link">
+    Download the Raspberry Pi OS (buster)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-the-sd-card" class="md-nav__link">
+    Format the SD card
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-raspbery-pi-imager" class="md-nav__link">
+    Run Raspbery Pi Imager
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-ssh-on-boot" class="md-nav__link">
+    Enable ssh on boot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goal-half-way-completed" class="md-nav__link">
+    Goal half-way completed !!!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-up-the-pi" class="md-nav__link">
+    Power up the Pi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#find-the-pi-on-your-local-network-and-get-its-ip-address" class="md-nav__link">
+    Find the Pi on your local network and get its IP address
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connect-with-ssh" class="md-nav__link">
+    Connect with ssh
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-pi" class="md-nav__link">
+    Configure pi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mount-a-usb-drive" class="md-nav__link">
+    Mount a USB drive
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../install/" class="md-nav__link">
+        Install the PiE server
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-interface/" class="md-nav__link">
+        Web Interface
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commander/" class="md-nav__link">
+        Commander
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../video-annotate/" class="md-nav__link">
+        Video Annotate
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parts/" class="md-nav__link">
+        Parts
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Wiring
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Wiring
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wiring-behavior-box/" class="md-nav__link">
+        Behavior Box
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wiring-scope/" class="md-nav__link">
+        Scope
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wiring-treadmill/" class="md-nav__link">
+        Treadmill
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../images/" class="md-nav__link">
+        Images
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          Extras
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Extras
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-server/" class="md-nav__link">
+        File Server
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mount-usb-drive/" class="md-nav__link">
+        Mount USB Drive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rest-interface/" class="md-nav__link">
+        Rest Interface
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trial-file/" class="md-nav__link">
+        Trial File
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gpio-timing/" class="md-nav__link">
+        GPIO Timing
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementation-details/" class="md-nav__link">
+        Implementation details
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release-notes/" class="md-nav__link">
+        Release Notes
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../about/" class="md-nav__link">
+        About
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#required-hardware" class="md-nav__link">
+    Required hardware
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-raspberry-pi-imager" class="md-nav__link">
+    Download Raspberry Pi Imager
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-the-raspberry-pi-os-buster" class="md-nav__link">
+    Download the Raspberry Pi OS (buster)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#format-the-sd-card" class="md-nav__link">
+    Format the SD card
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#run-raspbery-pi-imager" class="md-nav__link">
+    Run Raspbery Pi Imager
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-ssh-on-boot" class="md-nav__link">
+    Enable ssh on boot
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goal-half-way-completed" class="md-nav__link">
+    Goal half-way completed !!!
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-up-the-pi" class="md-nav__link">
+    Power up the Pi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#find-the-pi-on-your-local-network-and-get-its-ip-address" class="md-nav__link">
+    Find the Pi on your local network and get its IP address
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connect-with-ssh" class="md-nav__link">
+    Connect with ssh
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-pi" class="md-nav__link">
+    Configure pi
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mount-a-usb-drive" class="md-nav__link">
+    Mount a USB drive
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Preparing a Raspberry Pi</h1>
+
+<h2 id="overview">Overview</h2>
+<p>This is a recipe to prepare a Raspberry Pi computer to use with a PiE server. The general steps we will follow are as follows:</p>
+<ul>
+<li>Install the Raspberry Pi OS named <strong>buster</strong> onto an SD card.</li>
+<li>Boot the Pi with the SD card and find its IP on a local network.</li>
+<li>Login to the Pi with ssh.</li>
+<li>Configure the Pi with <code>sudo raspi-config</code>.</li>
+<li>Mount a USB drive</li>
+</ul>
+<p>This might seem daungting but if you take each step methodically, you can do it. If you have done it a few times, it should take about <strong>20 minutes</strong>.</p>
+<h2 id="required-hardware">Required hardware</h2>
+<p>For this initial setup you will need the following:</p>
+<ul>
+<li>A residential router connected to the internet</li>
+<li>A macOS or Windows machine connected to the router</li>
+<li>An additional ethernet cable for the new Pi</li>
+</ul>
+<p>If your setting up the Pi to eventually be on a University network, there are some additional requirements. Here we will assume you are on a residential network that you control. This can be acheived by simply bringing everything home and working from there.</p>
+<h2 id="download-raspberry-pi-imager">Download Raspberry Pi Imager</h2>
+<p>These initial steps are done on any internet connected computer (not the Pi).</p>
+<p>We will use the <code>Raspbery Pi Imager</code> to copy a downloaded Raspberry Pi OS (a .zip or .img file) onto your SD card.</p>
+<p>Download the <a href="https://www.raspberrypi.org/software/">Raspberry Pi Imager</a>. Here are direct links for downloading for the macOS and Windows:</p>
+<ul>
+<li>
+<p><a href="https://downloads.raspberrypi.org/imager/imager_1.5.dmg">macOS Download</a></p>
+</li>
+<li>
+<p><a href="https://downloads.raspberrypi.org/imager/imager_1.5.exe">Windows download</a></p>
+</li>
+</ul>
+<h2 id="download-the-raspberry-pi-os-buster">Download the Raspberry Pi OS (buster)</h2>
+<p>It is <strong>CRITICAL</strong> that you download and install a slightly older version named <code>Buster</code>.</p>
+<p>This can be found towards the bottom of the main Raspberry Pi OS <a href="https://www.raspberrypi.com/software/operating-systems/">download page</a>. You can get there using the 'See all download options' button.</p>
+<p>Specifically, you want the following:</p>
+<pre><code>Raspberry Pi OS Lite (Legacy)
+Release date: February 21st 2023
+System: 32-bit
+Kernel version: 5.10
+Debian version: 10 (buster)
+Size: 286MB
+</code></pre>
+<p>Here is a <a href="https://downloads.raspberrypi.org/raspios_oldstable_lite_armhf/images/raspios_oldstable_lite_armhf-2023-02-22/2023-02-21-raspios-buster-armhf-lite.img.xz">direct link to download the buster xz file</a>.</p>
+<p>The name of the file you downloaded should be <code>2023-02-21-raspios-buster-armhf-lite.img.xz</code>. This is a compressed file, on either macOS or Windows uncompress it and you should end up with a new <code>img</code> file named <code>2023-02-21-raspios-buster-armhf-lite.img</code>. This is what you will install onto the SD card using the Raspberry Pi Imager.</p>
+<h2 id="format-the-sd-card">Format the SD card</h2>
+<p>You need to format the SD card using the <code>Fat</code> format.</p>
+<p>If using a macOS computer</p>
+<ul>
+<li>Insert the SD card</li>
+<li>Open the 'Disk Utilities' app. It is in Applications:Utilities folder</li>
+<li>Select your SD card in the left list (make sure you get it right)</li>
+<li>Select 'Erase'</li>
+<li>In the Erase dialog select MS-DOS (Fat) and Master Boot Record (MBR)</li>
+</ul>
+<p>If you are using a Window computer, just follow the prompts when you first insert the SD card or right-click the SD card and format it.</p>
+<h2 id="run-raspbery-pi-imager">Run <code>Raspbery Pi Imager</code></h2>
+<p>In the Raspberry Pi Imager software ...</p>
+<ul>
+<li>Select <code>Choose OS</code> and then <code>Use Custom</code> and then select the <code>img</code> file you just uncompressed.</li>
+<li>Select your SD card.</li>
+</ul>
+<h2 id="enable-ssh-on-boot">Enable ssh on boot</h2>
+<p>Now the system is on your SD card. You need to enable ssh on boot so you can login to your Pi.</p>
+<p><strong>An aside.</strong> What we are doing here is a bit different than most interactions with computers. The Raspberry Pi, as we are using it, will reamin <code>headless</code>. This means there will never be a monitor, keyboard, or mouse connected to your Pi. All interaction is done through a command prompt using the terminal software called <code>ssh</code>.</p>
+<p>To enable <code>ssh</code> on boot, you need to make an empty file named <code>ssh</code> on the SD card.</p>
+<ul>
+<li>On macOS</li>
+</ul>
+<p>With the SD card inserted, in a Terminal, enable ssh on boot with the following command</p>
+<pre><code>touch /Volumes/boot/ssh
+</code></pre>
+<ul>
+<li>On Windows</li>
+</ul>
+<p>Use the exporer to view the SD card, it should be named <code>boot</code>. Right-click and create a new text document. Change the name of the new file to just <code>ssh</code> (no extnesion).</p>
+<h2 id="goal-half-way-completed">Goal half-way completed !!!</h2>
+<p>You now have an SD card ready to boot a Raspberry Pi! Go take a break!</p>
+<h2 id="power-up-the-pi">Power up the Pi</h2>
+<ul>
+<li>Insert the SD card into the Raspberry Pi computer.</li>
+<li>Attach an ethernet cable from the Pi to your local router.</li>
+<li>Plug in the USB power.</li>
+</ul>
+<h2 id="find-the-pi-on-your-local-network-and-get-its-ip-address">Find the Pi on your local network and get its IP address</h2>
+<p>Now you need to find the IP address of your Pi on the local network.</p>
+<p><strong>Note:</strong> This step is most easily done on a home type router (a residential router). This way you can use the router web interface to determine the IP address of the Pi. If your on a University network, you need to contact your network administrators and request a <code>fixed IP</code>. To do this, you will usually have to give them the Raspbery Pi ethernet <code>MAC</code> address.</p>
+<p>Once you are connected to a residential router, on a computer on the local network (connected to the same router as the Pi), open a browser and go to your  local router page. It is usually at <code>http://192.168.1.1</code>. Once there, find the <code>connected devices</code> tab and find your Raspbery Pi in the list.</p>
+<p>You need to note the <strong>IP address</strong> of your Pi for the following steps.</p>
+<p>If you eventually want your Pi on a University network and need the <code>MAC</code> address of the Pi you can also find it here. The <code>MAC</code> address is a unique identifier for each ethernet or wifi chip, it does not change.</p>
+<h2 id="connect-with-ssh">Connect with ssh</h2>
+<p>Again, on a computer on the local network, you need to connect to the Pi using a terminal program called <code>ssh</code>.</p>
+<p>On macOS, run the Terminal program. On Windows run a terminal program like <a href="https://www.putty.org/">Putty</a>.</p>
+<p>At the command prompt, type</p>
+<pre><code>ssh pi@&lt;IP-address-of-your-pi&gt;
+</code></pre>
+<p>Where <code>&lt;ip-address-of-your-pi&gt;</code> is the IP address you just noted down from your router.</p>
+<p>This will then ask for a <code>username</code> and <code>password</code>.</p>
+<p>The username is <code>pi</code> and the password is <code>raspberry</code>.</p>
+<p>Once logged in, your command prompt should look something like <code>pi@raspberrypi:~ $</code></p>
+<h2 id="configure-pi">Configure pi</h2>
+<p>Once logged into the pi, type <code>sudo raspi-config</code> and you will be presented with a number of menu options. You can select menus with the up/down arrows, enter into submenus with <code>return</code> (or <code>enter</code>) and go back to a previous menu with <code>escape</code>.</p>
+<pre><code>sudo raspi-config
+</code></pre>
+<pre><code>|       1 System Options       Configure system settings                       │
+│       2 Display Options      Configure display settings                      │
+│       3 Interface Options    Configure connections to peripherals            │
+│       4 Performance Options  Configure performance settings                  │
+│       5 Localisation Options Configure language and regional settings        │
+│       6 Advanced Options     Configure advanced settings                     │
+│       8 Update               Update this tool to the latest version          │
+│       9 About raspi-config   Information about this configuration tool
+</code></pre>
+<p>Select 1 then</p>
+<pre><code>│       S3 Password          Change password for the 'pi' user                 │
+</code></pre>
+<p>You <strong>must set the password to poetry7d</strong>. This is required for the PiE server to talk to the Raspberry Pi.</p>
+<pre><code>│       S4 Hostname          Set name for this computer on a network           │
+</code></pre>
+<p>Enter any valid hostname you want. This will uniquely identify your Pi with an easy to remember name on the network. We usually use animal names like giraffe or monkey.</p>
+<p>Select 3</p>
+<pre><code>│       3 Interface Options    Configure connections to peripherals            │
+</code></pre>
+<p>then select</p>
+<pre><code>│    P1 Camera      Enable/disable connection to the Raspberry Pi Camera       │
+</code></pre>
+<p>When asked, <code>Would you like the camera interface to be enabled</code> select <code>&lt;yes&gt;</code></p>
+<p>Select 5</p>
+<pre><code>│       5 Localisation Options Configure language and regional settings        │
+</code></pre>
+<p>then select</p>
+<pre><code>│         L1 Locale       Configure language and regional settings             │
+</code></pre>
+<p>Scroll up/down with up/down arrow. Toggle the selections with <code>space</code>, move from the list to the <code>ok</code> and <code>cancel</code> buttons with <code>tab</code></p>
+<p>by default, the following is usually selected</p>
+<pre><code>│    [*] en_GB.UTF-8 UTF-8                                              ▒   │
+</code></pre>
+<p>If your in the UK, you are good to go. If you are in the US then select (sorry to be so US centric)</p>
+<pre><code>│    [*] en_US.UTF-8 UTF-8                                              ↓   │
+</code></pre>
+<p>Select</p>
+<pre><code>│         L2 Timezone     Configure time zone                                  │
+</code></pre>
+<p>and select your timezone</p>
+<p>Select 6</p>
+<pre><code>│       6 Advanced Options     Configure advanced settings                     │
+</code></pre>
+<p>then select</p>
+<pre><code>│   A1 Expand Filesystem       Ensures that all of the SD card is available    │
+</code></pre>
+<p>You are done with this step !</p>
+<p>From the main menu select <code>&lt;finish&gt;</code> and when asked to reboot select <code>&lt;Yes&gt;</code></p>
+<h2 id="mount-a-usb-drive">Mount a USB drive</h2>
+<p>The Raspberry Pi OS does not mount USB drives when they are first plugged in (this is normal for most Linux operating systems).</p>
+<p>Follow our <a href="../mount-usb-drive">monting a USB drive</a> tutorial. An alternate version is <a href="https://cudmore.github.io/post/2015/05/05/mounting-a-usb-drive-at-boot/">here</a>.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.efa0ade1.min.js"></script>
+      
+        <script src="../javascripts/extra.js"></script>
+      
+    
+  </body>
+</html>
