@@ -421,6 +421,40 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#full-wiring-schematic" class="md-nav__link">
+    Full Wiring Schematic
+  </a>
+  
+    <nav class="md-nav" aria-label="Full Wiring Schematic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pie-hardware-overview-for-a-single-behavior-box" class="md-nav__link">
+    PiE hardware overview for a single behavior box
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wiring-table" class="md-nav__link">
+    Wiring table
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#behavior-box-schematic" class="md-nav__link">
+    Behavior Box Schematic
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#raspberry-pi-23-pin-out" class="md-nav__link">
     Raspberry Pi 2/3 pin out
   </a>
@@ -736,6 +770,40 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#full-wiring-schematic" class="md-nav__link">
+    Full Wiring Schematic
+  </a>
+  
+    <nav class="md-nav" aria-label="Full Wiring Schematic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pie-hardware-overview-for-a-single-behavior-box" class="md-nav__link">
+    PiE hardware overview for a single behavior box
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wiring-table" class="md-nav__link">
+    Wiring table
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#behavior-box-schematic" class="md-nav__link">
+    Behavior Box Schematic
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#raspberry-pi-23-pin-out" class="md-nav__link">
     Raspberry Pi 2/3 pin out
   </a>
@@ -833,7 +901,17 @@
 
 
 <h1 id="wiring-a-behavior-box">Wiring a behavior box</h1>
-<p>Wiring a behavior box is fairly simple. The Pi needs to be wired to one end of a relay/switch, the other end of the relay/switch is wired to 12V DC, IR and white LEDs, and the temperature/humidity sensor is wired to the Pi.</p>
+<p>Wiring a behavior box is fairly simple. The Pi needs to be wired to one end of a relay/switch, the other end of the relay/switch is wired to 12V DC, IR and white LEDs, and the fan. Finally the temperature/humidity sensor is wired to the Pi.</p>
+<h2 id="full-wiring-schematic">Full Wiring Schematic</h2>
+<h3 id="pie-hardware-overview-for-a-single-behavior-box">PiE hardware overview for a single behavior box</h3>
+<p>Starting with the network connection, the Raspberry Pi receives commands and sends data through the ethernet cable. It sends and receives data from the temperature/humidity sensor (DHT) and the video camera (teal outlined boxes). It sends data to the quad channel relay, which turns power on or off to the white lights, infrared lights, and fan. Wire colors used for temperature/humidity sensor and quad channel relay are consistent with the Wiring Table. Plug in locations for each wire on the quad channel relay can be used as a reference. </p>
+<p><IMG SRC="../img/schematics/230627_fullschematic_wcloudai.png" width=700 align="center"></p>
+<h3 id="wiring-table">Wiring table</h3>
+<p>The Raspberry Pi diagram (top, right) shows a map to every pin on the Raspberry Pi, to differentiate signal pins, power pins, and ground pins. Temperature/Humidity Sensor Wiring table (bottom left), colors match the color of the wires as depicted in the hardware overview, and on the physical DHT sensor on the purchase list. Quad channel relay shield wiring table (bottom right), wire colors match the colors used in the hardware overview. </p>
+<p><IMG SRC="../img/schematics/pi-wiring-diagram.jpg" width=700 align="center"></p>
+<h3 id="behavior-box-schematic">Behavior Box Schematic</h3>
+<p>Schematic showing an overview of a single behavior box with sensors and actuators in place within the box. </p>
+<p><IMG SRC="../img/schematics/behaviorbox_schematic.png" width=700 align="center"></p>
 <h2 id="raspberry-pi-23-pin-out">Raspberry Pi 2/3 pin out</h2>
 <p><IMG SRC="../img/raspberry_pins.png" width=650></p>
 <p>There are multiple power and ground pins, use these to connect to the relay switch and the temperature sensor. Conceptually, all the ground pins are the same, you can use a <a href="https://www.adafruit.com/product/64">bread-board</a> if you run out of ground pins or the wiring becomes too tangled.</p>
